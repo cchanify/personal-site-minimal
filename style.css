@@ -13,7 +13,7 @@ body {
 }
 h1 {
   color: #000000;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 .subheading {
   background-color: #FFFFFF;
@@ -21,7 +21,7 @@ h1 {
   font-size: 16px;
 }
 .subheading-text {
-  padding: 0 10px;
+  /*padding: 0 10px;*/
   display: inline-block;
   font-size: 16px;
 }
@@ -30,13 +30,13 @@ h1 {
 }
 
 .question {
-  padding: 20px;
+  /*padding: 20px;*/
   background-color: #FFFFFF;
 }
 
 .footer {
   font-size: 10px;
-  padding: 40px 0 80px 0;
+  /*padding: 40px 0 80px 0;*/
   color: #888;
   background-color: #FFFFFF;
   font-weight: 300;
