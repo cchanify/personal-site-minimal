@@ -18,15 +18,15 @@ h1 {
 .subheading {
   background-color: #FFFFFF;
   padding: 10px 0px;
-  font-size: 10px;
+  font-size: 16px;
 }
 .subheading-text {
   padding: 0 10px;
   display: inline-block;
-  font-size: 10px;
+  font-size: 16px;
 }
 .subheading p {
-  color: #fff;
+  color: #000000;
 }
 
 .question {
