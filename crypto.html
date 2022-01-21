@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
-    <title>Crypto</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title >Crypto</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">  
   </head>
 
-  <body>
-
-    <div class="heading">
-      <h1>Crypto</h1>
-    </div>
-
-    <div>
-      <p>The following is a <a href="https://en.wikipedia.org/wiki/Non-fungible_token" target="_blank">non-fungible token (NFT)</a> I won as part of Chainlink's NFT <a href="ttps://docs.chain.link/docs/the-hunt" target="_blank">Treasure Hunt</a>. NFTs follow the <a href="https://eips.ethereum.org/EIPS/eip-721" target="_blank">ERC721</a> standard, which a framework for defining completely unique tokens. This property means that NFTs / ERC721s are not easily interchanged, and can be used to represent unique real world or virutal assets, such as specific parcels of land, or ownership of digital assets and art, like this friendly wizard!</p>
-    </div>
+  <body class="d-flex h-100 text-center text-white bg-dark">
     
-    <div>
-      <nft-card contractAddress="0x8d78277bc2c63f07efc2c0c8a8512de4ad459a05" tokenId="2"> </nft-card> <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
-    </div>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Crypto</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="crypto.html">Crypto</a>
+            <a class="nav-link" href="links.html">Links</a>
+          </nav>
+        </div>
+      </header>
+    
+      <main class="px-3">
+        <div>
+          <p class="container">The following is a <a href="https://en.wikipedia.org/wiki/Non-fungible_token" target="_blank">non-fungible token (NFT)</a> I won as part of Chainlink's NFT <a href="ttps://docs.chain.link/docs/the-hunt" target="_blank">Treasure Hunt</a>. NFTs follow the <a href="https://eips.ethereum.org/EIPS/eip-721" target="_blank">ERC721</a> standard, which a framework for defining completely unique tokens. This property means that NFTs / ERC721s are not easily interchanged, and can be used to represent unique real world or virutal assets, such as specific parcels of land, or ownership of digital assets and art, like this friendly wizard!</p>
+        </div>
+        
+        <div>
+          <nft-card contractAddress="0x8d78277bc2c63f07efc2c0c8a8512de4ad459a05" tokenId="2"> </nft-card> <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+        </div>
 
+      </main>
+    
+      <footer class="mt-auto text-white-50">
+        <a href="https://github.com/cchanify" target="_blank" class="text-white">Github</a> | 
+        <a href="https://www.linkedin.com/in/connor-hanify-848063114/" color="primary" target="_blank" class="text-white">LinkedIn</a>
+      </footer>
+    </div>
   </body>
 
   <div class="footer">      
-    <nav>
+    <!-- <nav>
       <a href="index.html">Home</a>
-    </nav>
+    </nav> -->
   </div>
 </html>
