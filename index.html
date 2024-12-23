@@ -51,16 +51,6 @@
       </footer>
     </div>
     
-    <!-- Include Strava Stats Script -->
     <script type="module" src="./strava-stats.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (typeof initializeStats === 'function') {
-          initializeStats();
-        } else {
-          console.error('initializeStats is not defined');
-        }
-      });
-    </script>
   </body>
 </html>
