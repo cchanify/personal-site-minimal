@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env
+// import 'dotenv/config'; // Load environment variables from .env
 
 const clientId = process.env.CLIENT_ID; // Use environment variable for Client ID
 const clientSecret = process.env.CLIENT_SECRET; // Use environment variable for Client Secret
