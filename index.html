@@ -54,9 +54,13 @@
     <!-- Include Strava Stats Script -->
     <script type="module" src="./strava-stats.js"></script>
     <script>
-      // Call the initializeStats function with your refresh token
-      initializeStats('8facf8c4ddc0411e56c5df7712781ce55872e54e');
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof initializeStats === 'function') {
+          initializeStats();
+        } else {
+          console.error('initializeStats is not defined');
+        }
+      });
     </script>
-
   </body>
 </html>

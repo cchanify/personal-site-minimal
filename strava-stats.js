@@ -1,3 +1,4 @@
+// strava-stats.js
 const clientId = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 const refreshToken = import.meta.env.VITE_REFRESH_TOKEN;
