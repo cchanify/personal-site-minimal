@@ -1,8 +1,13 @@
 // import 'dotenv/config'; // Load environment variables from .env
 
-const clientId = process.env.CLIENT_ID; // Use environment variable for Client ID
-const clientSecret = process.env.CLIENT_SECRET; // Use environment variable for Client Secret
-const refreshToken = process.env.REFRESH_TOKEN; // Use environment variable for Refresh Token
+// const clientId = process.env.CLIENT_ID; // Use environment variable for Client ID
+// const clientSecret = process.env.CLIENT_SECRET; // Use environment variable for Client Secret
+// const refreshToken = process.env.REFRESH_TOKEN; // Use environment variable for Refresh Token
+
+
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+const refreshToken = import.meta.env.VITE_REFRESH_TOKEN;
 const authEndpoint = 'https://www.strava.com/oauth/token';
 const apiEndpoint = 'https://www.strava.com/api/v3/athlete/activities';
 
