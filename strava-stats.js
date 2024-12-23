@@ -8,30 +8,6 @@
 const accessToken = 'b3f5cebfaddaab679eedc812ebed1696c194a996'; // Replace with your new access token
 const apiEndpoint = 'https://www.strava.com/api/v3/athlete/activities';
 
-// Fetch access token
-async function getAccessToken(refreshToken) {
-  console.log("Fetching access token...");
-  const response = await fetch(authEndpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      client_id: clientId,
-      client_secret: clientSecret,
-      refresh_token: refreshToken,
-      grant_type: 'refresh_token',
-    }),
-  });
-
-  if (!response.ok) {
-    console.error('Failed to fetch access token:', await response.text());
-    throw new Error('Failed to fetch access token');
-  }
-
-  const data = await response.json();
-  console.log("Access token fetched:", data.access_token);
-  return data.access_token;
-}
-
 async function getYearlyStats(accessToken) {
   console.log("Fetching yearly stats...");
   const response = await fetch(`${apiEndpoint}?per_page=200`, {
@@ -71,9 +47,8 @@ function renderStats(stats) {
 }
 
 // Main function to initialize stats
-async function initializeStats(refreshToken) {
+async function initializeStats() {
   try {
-    const accessToken = await getAccessToken(refreshToken);
     const stats = await getYearlyStats(accessToken);
     renderStats(stats);
   } catch (error) {
@@ -82,8 +57,8 @@ async function initializeStats(refreshToken) {
 }
 
 // Example usage:
-// Call initializeStats with your refresh token after the user has authenticated
-initializeStats('8facf8c4ddc0411e56c5df7712781ce55872e54e');
+// Call initializeStats directly with the access token
+initializeStats();
 
 // HTML to display the stats
 // Include this in your HTML file:
