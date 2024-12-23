@@ -23,6 +23,7 @@
             <a class="nav-link" href="crypto.html">crypto</a>
             <a class="nav-link" href="links.html">links</a>
             <a class="nav-link" href="security.html">security</a>
+            <a class="nav-link" href="strava-page.html">strava</a>
           </nav> 
         </div>
       </header>
@@ -32,8 +33,19 @@
         
         <p class="container">I'm interested in technology, especially in products that help people live better. I am particularly curious about security, web3, biotech, and renewable energy, although I'm always ready to learn new things. I'm a fan of the <a href="https://www.dreamsongs.com/RiseOfWorseIsBetter.html" target="_"> Worse Is Better</a> UNIX philosophy and a lover of minimalism.</p>
 
-        <p class="container">I also like to <a href="https://www.strava.com/athletes/chanify" target="_blank">bike, swim, and run</a>.</p>
+        <!-- Strava Stats Section -->
+        <section class="container mt-5">
+
+          <p class="container">I also like to <a href="https://www.strava.com/athletes/chanify" target="_blank">bike, swim, and run</a>. Here are my yearly stats:</p>
+          <!-- <h3>My Yearly Activity Stats</h3> -->
+          <p>Run: <span id="running-distance">Loading...</span></p>
+          <p>Swim: <span id="swimming-distance">Loading...</span></p>
+          <p>Bike: <span id="cycling-distance">Loading...</span></p>
+        </section>
+
       </main>
+
+        <!-- <script src="./strava-stats.js"></script> -->
 
       <footer class="mt-auto text-black text-center">
         <a href="https://github.com/cchanify" target="_blank" class="text-black">Github</a> | 
@@ -41,5 +53,12 @@
       </footer>
     </div>
     
+    <!-- Include Strava Stats Script -->
+    <script src="./strava-stats.js"></script>
+    <script>
+      // Call the initializeStats function with your refresh token
+      initializeStats('8facf8c4ddc0411e56c5df7712781ce55872e54e');
+    </script>
+
   </body>
 </html>
