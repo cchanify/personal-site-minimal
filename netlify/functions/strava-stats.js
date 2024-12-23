@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch'; // Use ES module syntax for node-fetch
 
 exports.handler = async () => {
   const clientId = process.env.STRAVA_CLIENT_ID;
