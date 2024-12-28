@@ -1,2 +1,8 @@
-[functions]
-directory = "netlify/functions/"
+[build]
+  publish = "public"
+  functions = "netlify/functions" # Path to the functions directory
+
+[dev]
+  framework = "#static"          # Use static server
+  port = 8888                    # Set dev server port
+  functionsPort = 3999           # Set port for serverless functions
