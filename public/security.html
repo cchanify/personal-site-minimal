@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Curated cybersecurity resources, research, and tools by Connor Hanify, Security Engineer at Databricks. News, frameworks, and learning resources for security professionals.">
     <meta name="author" content="Connor Hanify">
-    <title>security</title>
+    <meta name="keywords" content="cybersecurity resources, security research, MITRE ATT&CK, incident response, Connor Hanify, Databricks security">
+    <title>Security Resources - Connor Hanify</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link href="css/enhanced-content.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
@@ -16,123 +19,238 @@
         <div>
           <h3 class="float-md-start mb-0">connor hanify</h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" href="index.html">about</a>
-            <a class="nav-link" href="crypto.html">crypto</a>
+            <a class="nav-link" href="index.html">about</a>
             <a class="nav-link" href="links.html">links</a>
-            <a class="nav-link" href="security.html"><b>security</b></a>
+            <a class="nav-link active" href="security.html"><b>security</b></a>
           </nav> 
         </div>
       </header>
 
       <main class="p-3">
-        <h4>Blogs</h4>
-        <ul>
-          <li><a href="https://this.weekinsecurity.com/">this week in security</a> by Zach Whittaker</li>
-          <li><a href="https://tldrsec.com/">tl;dr sec</a> by Clint Gibler</li>
-          <li>Substack: <a href="https://www.detectionengineering.net/">Detection Engineering Weekly</a></li>
+        <div class="section-header">
+          <div class="section-title">Security</div>
+          <div class="section-intro">
+            Curated security resources I check regularly. Mix of news, tools, research, and practical guidance for security professionals.
+          </div>
+        </div>
+        
+        <!-- News & Analysis -->
+        <div class="section-header">
+          <div class="section-title">News & Analysis</div>
+          <div class="section-intro">
+            Weekly newsletters and blogs for staying current on security developments.
+          </div>
+        </div>
+        
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://this.weekinsecurity.com/" target="_blank">This Week in Security</a>
+            </div>
+            <div class="resource-meta">Zach Whittaker</div>
+            <div class="resource-description">Weekly newsletter covering major security incidents, breaches, and industry news. Good for staying current on what's happening in the security world.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://tldrsec.com/" target="_blank">tl;dr sec</a>
+            </div>
+            <div class="resource-meta">Clint Gibler</div>
+            <div class="resource-description">Weekly security newsletter focused on practical tools, research, and industry trends. Particularly strong on application security and cloud security topics.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.detectionengineering.net/" target="_blank">Detection Engineering Weekly</a>
+            </div>
+            <div class="resource-meta">Substack</div>
+            <div class="resource-description">Newsletter focused on threat detection, SIEM engineering, and security operations. Covers tools, techniques, and case studies for detection teams.</div>
+          </li>
         </ul>
-
-        <h4>Websites</h4>
-        <ul>
-          <li><a href="https://databreaches.net/">DataBreaches</a></li>
-          <li>MITRE <a href="https://emb3d.mitre.org/?utm_source=substack&utm_medium=email">EMB3D</a> knowledge base of cyber threats to embedded devices</li>
-          <li>MITRE <a href="https://attack.mitre.org/">ATT&CK</a> knowledge base of adversary tactics and techniques</li>
-          <li>MITRE <a href="https://atlas.mitre.org/matrices/ATLAS">ATLAS</a> machine learning attack matrix</li>
-          <li><a href="https://hackingthe.cloud/">Hacking The Cloud</a> is an encyclopedia of attacks/tactics/techniques for cloud exploitation</li>
-          <li><a href="https://github.com/notdls/known-breaches?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-232-github-actions-cache-poisoning-rust-red-team-tools-prioritizing-detections">Known Breaches</a></li>
+        
+        <!-- Reference & Frameworks -->
+        <div class="section-header">
+          <div class="section-title">Reference & Frameworks</div>
+          <div class="section-intro">
+            Essential knowledge bases and frameworks for security work.
+          </div>
+        </div>
+        
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://databreaches.net/" target="_blank">DataBreaches</a>
+            </div>
+            <div class="resource-meta">Community News Site</div>
+            <div class="resource-description">Independent news site tracking data breaches, privacy violations, and cybersecurity incidents. Comprehensive coverage of breach notifications and regulatory responses.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://emb3d.mitre.org/" target="_blank">MITRE EMB3D</a>
+            </div>
+            <div class="resource-meta">MITRE Corporation</div>
+            <div class="resource-description">Knowledge base of cyber threats to embedded devices. Covers attack techniques, vulnerabilities, and mitigations specific to IoT and embedded systems.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK</a>
+            </div>
+            <div class="resource-meta">MITRE Corporation</div>
+            <div class="resource-description">Knowledge base of adversary tactics and techniques based on real-world observations. Essential reference for threat hunting, detection engineering, and security assessments.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://atlas.mitre.org/matrices/ATLAS" target="_blank">MITRE ATLAS</a>
+            </div>
+            <div class="resource-meta">MITRE Corporation</div>
+            <div class="resource-description">Framework for understanding adversarial threats to AI and machine learning systems. Covers attack techniques specific to AI/ML environments and defenses.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://hackingthe.cloud/" target="_blank">Hacking The Cloud</a>
+            </div>
+            <div class="resource-meta">Community Project</div>
+            <div class="resource-description">Encyclopedia of cloud security attack techniques and tactics. Covers AWS, Azure, and GCP exploitation methods with practical examples and detection guidance.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://github.com/notdls/known-breaches" target="_blank">Known Breaches</a>
+            </div>
+            <div class="resource-meta">GitHub Project</div>
+            <div class="resource-description">Comprehensive database of historical data breaches and security incidents. Includes timelines, impact assessments, and lessons learned from major breaches.</div>
+          </li>
         </ul>
-
-        <h4>Conference Talk Compilations</h4>
-        <ul>
-          <li><a href="https://www.youtube.com/playlist?list=PLdq8VB0hSfcYjWMBLrItQTNSbhXZ-jElD">AWS re:Invent 2024 Security Talks</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt">DEF CON 32 Main Stage Talks</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLsfnCRA9QVnQ4UWSOWiLKJci3_isxI3U6">SANS CloudSecNext Summit 2024</a></li>
+        
+        <!-- Conference Content -->
+        <div class="section-header">
+          <div class="section-title">Conference Content</div>
+          <div class="section-intro">
+            Curated talks and presentations from major security conferences.
+          </div>
+        </div>
+        
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.youtube.com/playlist?list=PLdq8VB0hSfcYjWMBLrItQTNSbhXZ-jElD" target="_blank">AWS re:Invent 2024 Security Talks</a>
+            </div>
+            <div class="resource-meta">AWS, 2024</div>
+            <div class="resource-description">Collection of security-focused presentations from AWS re:Invent 2024. Covers cloud security best practices, new service features, and real-world implementation case studies.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.youtube.com/playlist?list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt" target="_blank">DEF CON 32 Main Stage Talks</a>
+            </div>
+            <div class="resource-meta">DEF CON, 2024</div>
+            <div class="resource-description">Main stage presentations from DEF CON 32 covering cutting-edge security research, vulnerability discoveries, and novel attack techniques across various domains.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.youtube.com/playlist?list=PLsfnCRA9QVnQ4UWSOWiLKJci3_isxI3U6" target="_blank">SANS CloudSecNext Summit 2024</a>
+            </div>
+            <div class="resource-meta">SANS Institute, 2024</div>
+            <div class="resource-description">Cloud security conference content focusing on practical implementation strategies, threat modeling, and security architecture for cloud environments.</div>
+          </li>
         </ul>
-
-        <h4>Guides</h4>
-        <ul>
-          <li>Collection of <a href="https://start.me/p/9oJvxx/applying-llms-genai-to-cyber-security">LLM resources</a> related to security. From Dylan Williams</li>
-          <li><a href="https://saweis.net/crypto.html">Theory and Practice of Cryptography Mini-Course</a>: taught in 2007 at Google</li>
-          <li><a href="https://github.com/blackorbird/APT_REPORT?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-239-llm-vulnerability-detection-apt-reports-learn-exploit-development">APT_REPORT</a> collected by @blackorbird</li>
-          <li>CISA: <a href="https://www.cisa.gov/cyber-guidance-small-businesses">Cyber Guidance for Small Business</a> CISA published 2024-04-01</li>
-          <li><a href="https://github.com/vm32/Linux-Incident-Response?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-214-poisoning-github-s-runner-images-fuzzing-aws-waf-llm-powered-honeypot">Incident Response Linux</a></li>
+        
+        <!-- Learning & Training -->
+        <div class="section-header">
+          <div class="section-title">Learning & Training</div>
+          <div class="section-intro">
+            Educational resources and practical guides for developing security skills.
+          </div>
+        </div>
+        
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://start.me/p/9oJvxx/applying-llms-genai-to-cyber-security" target="_blank">LLM Resources for Security</a>
+            </div>
+            <div class="resource-meta">Dylan Williams</div>
+            <div class="resource-description">Curated collection of resources on applying large language models and generative AI to cybersecurity. Covers use cases, tools, and implementation guidance for security teams.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://saweis.net/crypto.html" target="_blank">Theory and Practice of Cryptography</a>
+            </div>
+            <div class="resource-meta">Stanford, 2007</div>
+            <div class="resource-description">Mini-course on cryptographic principles taught at Google. Covers fundamental concepts, common implementations, and practical considerations for using cryptography in systems.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://github.com/blackorbird/APT_REPORT" target="_blank">APT Reports Collection</a>
+            </div>
+            <div class="resource-meta">@blackorbird</div>
+            <div class="resource-description">Comprehensive collection of Advanced Persistent Threat (APT) research reports and analysis. Includes attribution, tactics, techniques, and indicators of compromise for major threat groups.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.cisa.gov/cyber-guidance-small-businesses" target="_blank">Cyber Guidance for Small Business</a>
+            </div>
+            <div class="resource-meta">CISA, April 2024</div>
+            <div class="resource-description">Practical cybersecurity guidance for small and medium businesses. Covers essential security controls, incident response planning, and resource-appropriate security measures.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://github.com/vm32/Linux-Incident-Response" target="_blank">Linux Incident Response</a>
+            </div>
+            <div class="resource-meta">GitHub Project</div>
+            <div class="resource-description">Comprehensive guide for incident response on Linux systems. Includes forensic techniques, log analysis methods, and practical tools for investigating security incidents.</div>
+          </li>
         </ul>
-
-        <h4>Companies with Good Security Blogs</h4>
-        <ul>
-          <li><a href="https://securitylabs.datadoghq.com/">Datadog security labs</a></li>
-          <li><a href="https://blog.cloudflare.com/tag/security/">CloudFlare Security Blog</a></li>
-          <li><a href="https://www.wiz.io/blog/tag/security">Wiz Security Blog</a></li>
-          <li><a href="https://aws.amazon.com/blogs/security/">AWS Security Blog</a></li>
+        
+        <!-- Corporate Security Blogs -->
+        <div class="section-header">
+          <div class="section-title">Corporate Security Blogs</div>
+          <div class="section-intro">
+            Security research and insights from companies with strong security teams.
+          </div>
+        </div>
+        
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://securitylabs.datadoghq.com/" target="_blank">Datadog Security Labs</a>
+            </div>
+            <div class="resource-meta">Datadog</div>
+            <div class="resource-description">Security research blog covering cloud security, threat detection, and incident response. Includes technical deep-dives and threat intelligence analysis.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://blog.cloudflare.com/tag/security/" target="_blank">CloudFlare Security Blog</a>
+            </div>
+            <div class="resource-meta">Cloudflare</div>
+            <div class="resource-description">Security-focused posts covering DDoS mitigation, web application security, and internet infrastructure threats. Includes technical analysis of attacks at scale.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://www.wiz.io/blog/tag/security" target="_blank">Wiz Security Blog</a>
+            </div>
+            <div class="resource-meta">Wiz</div>
+            <div class="resource-description">Cloud security research and vulnerability analysis. Focuses on cloud infrastructure security, container security, and cloud-native threat detection techniques.</div>
+          </li>
+          
+          <li class="resource-item">
+            <div class="resource-title">
+              <a href="https://aws.amazon.com/blogs/security/" target="_blank">AWS Security Blog</a>
+            </div>
+            <div class="resource-meta">Amazon Web Services</div>
+            <div class="resource-description">Official AWS security blog covering service updates, best practices, and implementation guidance. Includes case studies and security architecture patterns for AWS environments.</div>
+          </li>
         </ul>
-
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="https://databreaches.net/?page_id=112332">Data Breaches</a></li>
-          <li><a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-247-linkedin-s-ai-security-posture-platform-pypi-defaults-iam-least-privilege">URL Validation Cheat Sheet</a></li>
-          <li><a href="https://kubenomicon.com/Kubenomicon.html">Kubenomicon</a> is a resource to understand Kubernetes from an offensive perspective</li>
-          <li><a href="https://microsoft.github.io/Threat-Matrix-for-Kubernetes/">Microsoft - Threat Matrix for Kubernetes</a></li>
-          <li><a href="https://github.com/anvilogic-forge/armory">Detection Armory by Anvilogic Forge</a></li>
-          <li><a href="https://threats.wiz.io/defenses?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-238-security-engineering-google-interview-notes-bsidessf-talks-github-ci-cd-egress-filtering">Cloud Threat Landscapes</a></li>
-          <li><a href="https://github.com/dwillowtree/diana">DIANA</a>. DIANA automates the creation of detections from threat intelligence using Large Language Models (LLMs)</li>
-          <li><a href="https://bellingcat.gitbook.io/toolkit">Open Source Investigation Toolkit</a></li>
-          <li><a href="https://github.com/BushidoUK/Ransomware-Tool-Matrix">Ransomware Tool Matrix</a></li>
-        </ul>
-
-        <h4>Conferences</h4>
-        <ul>
-          <li><a href="https://limacharlie.io/blog/mssn-ctrl-2024-speaker-announcement">MSSN CNTRL (2024)</a></li>
-        </ul>
-
-        <h4>Videos</h4>
-        <ul>
-          <li><a href="https://www.youtube.com/watch?v=x9va5ZQuAMI&list=PLO8_Yc4h5cIoDD_81sjgFFnRHG-pX_e_C&index=10">The impact of digital forensics in IR investigations</a> | Carly Battaile and Partha Alwar | MSSN CTRL (2024)</li>
-          <li><a href="https://www.youtube.com/watch?v=cMkYrypg0_Y&list=PLO8_Yc4h5cIoDD_81sjgFFnRHG-pX_e_C&index=19">Using AI to reduce toil in detection writing</a> | Dylan Williams | MSSN CTRL (2024)</li>
-          <li><a href="https://www.youtube.com/watch?v=BPh4Hc3TH74">A decade of defense: securing the largest US crypto exchange</a> | Philip Martin | MSSN CTRL 2024</li>
-          <li><a href="https://www.youtube.com/watch?v=cB7RCAAS4ik&list=PLdh-RwQzDsaNWBex2I09OFLCph7l_KnQE">Kubernetes Security Fundamentals: API Security</a> - Part 1. Published 2024-02-13</li>
-          <li>AppSecCali 2019 - <a href="https://www.youtube.com/watch?v=6iNpqTZrwjE">Startup security: Starting a security program at a startup</a> - Evan Johnson</li>
-          <li>BSidesSF 2024 - <a href="https://www.youtube.com/watch?v=DyRxMmypt_g">Startup Security</a>, 2nd Edition, published 2024-07-08 Evan Johnson</li>
-          <li>DEF CON 32 - <a href="https://www.youtube.com/watch?v=pTSEViCwAig&list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt&index=9">On Your Ocean's 11 Team, I'm the AI Guy</a> (technically Girl) - Harriet Farlow</li>
-        </ul>
-
-        <h4>Papers</h4>
-        <ul>
-          <li><a href="https://arxiv.org/abs/2410.17351">Hierarchical Multi-agent Reinforcement Learning for Cyber Network Defense</a>. Submitted 2024-10-22 Alina Oprea</li>
-          <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2023/final">Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations</a>. Published 2024-01-15 Alina Oprea</li>
-          <li><a href="https://arxiv.org/abs/1811.01134">A Marauder's Map of Security and Privacy in Machine Learning</a>. Published 2018-11-03</li>
-          <li><a href="https://sweis.medium.com/most-cited-security-papers-from-2015-2019-d21515db3681">Most Cited Security Papers</a> from 2015–2019.</li>
-          <li>CISA: <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development">Deploying AI Systems Securely</a>. Published 2024-04-01 CISA</li>
-        </ul>
-
-        <h4>Articles</h4>
-          <ul>
-            <li><a href="https://billatnapier.medium.com/towards-zero-trust-and-attribute-based-encryption-a3bd935eb99a">Towards Zero Trust and Attribute-Based Encryption</a>. Published 2024-11-16</li>
-            <li><a href="https://www.datadoghq.com/blog/datadog-detection-as-code/">How we use Datadog for detection as code</a>. Published 2024-10-11</li>
-            <li><a href="https://srajangupta.substack.com/p/paved-roads-secure-by-design-more?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-257-autonomous-ai-hacking-buying-us-east-1-macos-security">Paved Roads? Secure-by-Design?? More Buzzwords???</a></li>
-            <li><a href="https://cyberscoop.com/north-korea-macos-malware-flutter-jamf/">North Korean-linked hackers were caught experimenting with new macOS malware</a>. Published 2024-11-12</li>
-            <li><a href="https://www.securityweek.com/palo-alto-networks-confirms-new-firewall-zero-day-exploitation/">Palo Alto Networks Confirms New Firewall Zero-Day Exploitation</a>. Published 2024-11-15</li>
-            <li><a href="https://news.sophos.com/en-us/2024/10/31/pacific-rim-neutralizing-china-based-threat/">Pacific Rim: Inside the Counter-Offensive—The TTPs Used to Neutralize China-Based Threats</a>. Published 2024-10-31 by Sophos</li>
-            <li><a href="https://www.datadoghq.com/state-of-cloud-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-253-state-of-cloud-security-applying-ai-to-cybersecurity-living-off-the-land-esxi">State of Cloud Security</a>. Published 2024-10-01 from Datadog Security Labs</li>
-            <li><a href="https://www.gyan.ca/things-to-know-about-your-tech-salary/">Things You Need to Know About Your Tech Salary</a>, by Jeevan Singh</li>
-            <li><a href="https://www.gyan.ca/lessons-in-security-tooling-strategies-for-success/">Lessons in Security Tooling: Strategies for Success</a>, by Jeevan Singh</li>
-            <li><a href="https://www.linkedin.com/pulse/microsofts-dangerous-addiction-security-revenue-alex-stamos-1ukzc/">Microsoft's Dangerous Addiction To Security Revenue</a>, published 2024-01-26 by Alex Stamos</li>
-            <li><a href="https://akumansley.org/Essays/Startup+Security">Startup Security</a> by Andrew Kumansley</li>
-            <li><a href="https://medium.com/@vanvleet/threat-detection-strategy-a-visual-model-b8f4fa518441">Plotting a Winning Threat Detection Strategy: A Visual Model</a>. Published 2024-01-22 by Van Vleet</li>
-            <li><a href="https://www.plerion.com/blog/things-you-wish-you-didnt-need-to-know-about-s3">Things you wish you didn't need to know about S3</a>, published 2024-05-30 by Daniel Grzelak</li>
-            <li><a href="https://www.elastic.co/blog/detections-as-code-elastic-security?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-234-awesome-ci-cd-attacks-stride-gpt-non-production-aws-attack-surface">Rolling your own Detections as Code with Elastic Security</a>. Published 2024-05-14</li>
-            <li><a href="https://tldrsec.com/p/blog-startup-security-starting-a-security-program-at-a-startup">Startup Security: Starting a Security Program at a Startup</a>. Published 2022-01-14 by Clint Gibler</li>
-            <li><a href="https://www.greynoise.io/blog/greynoise-intelligence-discovers-zero-day-vulnerabilities-in-live-streaming-cameras-with-the-help-of-ai">GreyNoise Intelligence Discovers Zero-Day Vulnerabilities in Live Streaming Cameras with the Help of AI</a>. Published 2024-10-31</li>
-            <li><a href="https://calebsima.com/2024/06/17/predicting-ais-impact-on-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-241-understanding-crowdstrike-aws-pentesting-guide-rule-explorer-project">Predicting AI’s Impact on Security</a>. Published 2024-06-17</li>
-            <li><a href="https://www.magonia.io/blog/five-year-retrospective-detection-as-code?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-241-understanding-crowdstrike-aws-pentesting-guide-rule-explorer-project">A Five Year Retrospective on Detection as Code</a>. Published 2024-06-14 by Caleb Sima</li>
-            <li><a href="https://www.aquasec.com/blog/undetected-hard-code-secrets-expose-corporations/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-239-llm-vulnerability-detection-apt-reports-learn-exploit-development">Phantom Secrets: Undetected Secrets Expose Major Corporations</a>. Published 2024-06-23</li>
-            <li><a href="https://www.synacktiv.com/publications/hijacking-github-runners-to-compromise-the-organization?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-236-interview-questions-securing-your-snowflake-red-teaming-llms">Hijacking GitHub runners to compromise the organization</a>. Published 2024-05-22</li>
-            <li><a href="https://aws.amazon.com/blogs/security/methodology-for-incident-response-on-generative-ai-workloads/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-249-atomic-cloud-iocs-russian-apt-tool-matrix-netflix-paved-road-webinar">Methodology for incident response on generative AI workloads</a> from AWS Security Blog. Published 2024-09-16</li>
-            <li><a href="https://www.darkreading.com/identity-access-management-security/nist-drops-password-complexity-mandatory-reset-rules?utm_source=substack&utm_medium=email">NIST Drops Password Complexity, Mandatory Reset Rules</a>. Published 2204-09-25</li>
-            <li><a href="https://blog.cloudflare.com/how-cloudflare-auto-mitigated-world-record-3-8-tbps-ddos-attack/?utm_source=newsletter.cybersecurityhq.io&utm_medium=newsletter&utm_campaign=cyber-attacks-double-since-2020/">How Cloudflare auto-mitigated world record 3.8 Tbps DDoS attack</a>. Published 2024-10-02</li>
-            <li><a href="https://www.slideshare.net/slideshow/a-big-dashboard-of-problemspdf/256166731">A Big Dashboard of Problems.pdf</a>. Published 2023-02-28 by #TravisMcPeak</li>
-          </ul>
-
-
       </main>
 
       <footer class="mt-auto text-black text-center">
@@ -141,6 +259,7 @@
       </footer>
     
     </div>
+    <script src="js/dark-mode.js"></script>
   </body>
 
 </html>

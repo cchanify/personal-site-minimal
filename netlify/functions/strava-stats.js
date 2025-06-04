@@ -25,32 +25,31 @@ export const handler = async () => {
 
     if (!authResponse.ok) {
       console.error("Auth Error:", authData);
+      console.error("Auth Error:", authData);
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to fetch access token', details: authData }),
+        body: JSON.stringify({ error: 'Failed to fetch access token' }),
       };
     }
 
-    console.log("Access token fetched:", authData.access_token);
+    console.log("Access token fetched successfully");
 
     const activitiesResponse = await fetch(`${apiEndpoint}?per_page=200`, {
       headers: { Authorization: `Bearer ${authData.access_token}` },
     });
 
-    const activitiesText = await activitiesResponse.text(); // Use text to debug non-JSON responses
-    console.log("Raw activities response:", activitiesText);
-
-    const activities = JSON.parse(activitiesText);
+    const activities = await activitiesResponse.json();
 
     if (!activitiesResponse.ok) {
       console.error("Activities Error:", activities);
+      console.error("Activities Error:", activities);
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to fetch activities', details: activities }),
+        body: JSON.stringify({ error: 'Failed to fetch activities' }),
       };
     }
 
-    console.log("Activities fetched:", activities);
+    console.log("Activities fetched successfully, count:", activities.length);
 
     const currentYear = new Date().getFullYear();
     const stats = { running: 0, swimming: 0, cycling: 0 };
@@ -71,9 +70,10 @@ export const handler = async () => {
     };
   } catch (error) {
     console.error("Unexpected error:", error);
+    console.error("Unexpected error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Unexpected server error', details: error.message }),
+      body: JSON.stringify({ error: 'Service temporarily unavailable' }),
     };
   }
 };

@@ -1,0 +1,152 @@
+/* Dark Mode Theme Variables and Styles */
+
+:root {
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #000000;
+  --text-secondary: #6c757d;
+  --text-link: #0d6efd;
+  --text-link-hover: #0a58ca;
+  --border-color: #dee2e6;
+  --nav-link-color: #000000;
+  --nav-link-active: #000000;
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-link: #66b3ff;
+  --text-link-hover: #4da6ff;
+  --border-color: #333333;
+  --nav-link-color: #ffffff;
+  --nav-link-active: #ffffff;
+}
+
+/* Apply theme variables to elements */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-black {
+  color: var(--text-primary) !important;
+}
+
+.nav-link {
+  color: var(--nav-link-color) !important;
+}
+
+.nav-link.active {
+  color: var(--nav-link-active) !important;
+}
+
+a {
+  color: var(--text-link) !important;
+}
+
+a:hover {
+  color: var(--text-link-hover) !important;
+}
+
+/* Dark mode toggle button styles */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-mode-toggle:hover {
+  background: var(--border-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dark-mode-toggle:focus {
+  outline: 2px solid var(--text-link);
+  outline-offset: 2px;
+}
+
+/* Icon styles for toggle */
+.toggle-icon {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Override Bootstrap dark text classes in dark mode */
+[data-theme="dark"] .text-black {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-center {
+  color: var(--text-primary) !important;
+}
+
+/* Footer link styling */
+[data-theme="dark"] footer a {
+  color: var(--text-link) !important;
+}
+
+[data-theme="dark"] footer a:hover {
+  color: var(--text-link-hover) !important;
+}
+
+/* Container and content area adjustments */
+.cover-container {
+  background-color: transparent;
+}
+
+/* Navigation improvements */
+.nav-masthead .nav-link {
+  transition: color 0.3s ease;
+}
+
+/* NFT card and embedded content adjustments */
+[data-theme="dark"] nft-card {
+  filter: brightness(0.9);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Ensure proper contrast for all text elements */
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] p {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] li {
+  color: var(--text-primary) !important;
+}
