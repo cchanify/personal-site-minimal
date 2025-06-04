@@ -4,5 +4,14 @@
 
 [dev]
   framework = "#static"          # Use static server
-  port = 8888                    # Set dev server port
+  port = 8889                    # Set dev server port
   functionsPort = 3999           # Set port for serverless functions
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: *.opensea.io *.openseauserdata.com; connect-src 'self' https: api.opensea.io; style-src-attr 'unsafe-inline';"
