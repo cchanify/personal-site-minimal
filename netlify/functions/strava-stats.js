@@ -70,7 +70,6 @@ export const handler = async () => {
     };
   } catch (error) {
     console.error("Unexpected error:", error);
-    console.error("Unexpected error:", error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Service temporarily unavailable' }),
