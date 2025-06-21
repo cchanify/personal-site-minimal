@@ -85,6 +85,13 @@ class ObsidianNav {
       <p class="sidebar-subtitle">Security Engineer</p>
     `;
     
+    // Search container
+    const searchContainer = document.createElement('div');
+    searchContainer.className = 'search-container';
+    searchContainer.innerHTML = `
+      <input type="text" class="search-box" placeholder="Search sections..." id="search-input">
+    `;
+    
     // Navigation
     const nav = document.createElement('nav');
     nav.className = 'sidebar-nav';
@@ -96,6 +103,12 @@ class ObsidianNav {
       <h3 class="nav-section-title">Core</h3>
       <button class="nav-item" data-section="about">
         <span class="nav-item-icon">👤</span>About
+      </button>
+      <button class="nav-item" data-section="blog">
+        <span class="nav-item-icon">📝</span>Blog
+      </button>
+      <button class="nav-item" data-section="strava">
+        <span class="nav-item-icon">🏃</span>Fitness
       </button>
     `;
     
@@ -122,6 +135,7 @@ class ObsidianNav {
     nav.appendChild(resourcesSection);
     
     sidebar.appendChild(header);
+    sidebar.appendChild(searchContainer);
     sidebar.appendChild(nav);
     
     return sidebar;
@@ -178,6 +192,10 @@ class ObsidianNav {
       this.closeMobileSidebar();
     });
 
+    // Search functionality
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      this.filterSections(e.target.value);
+    });
 
     // Close mobile sidebar on section change
     document.addEventListener('click', (e) => {
@@ -228,6 +246,19 @@ class ObsidianNav {
     overlay.classList.remove('active');
   }
 
+  filterSections(query) {
+    const navItems = document.querySelectorAll('.nav-item');
+    const lowerQuery = query.toLowerCase();
+    
+    navItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(lowerQuery)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
 
   // Content generators
   getAboutContent() {
@@ -253,24 +284,14 @@ class ObsidianNav {
   getSecurityContent() {
     return `
       <div class="content-section">
-        <h2>Security Frameworks & Governance</h2>
+        <h2>Security Frameworks & News</h2>
         <ul>
           <li><a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK</a> - Comprehensive knowledge base of adversary tactics and techniques</li>
           <li><a href="https://www.cisecurity.org/controls" target="_blank">CIS Controls</a> - Prioritized set of actions for cyber defense</li>
           <li><a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a> - Framework for improving critical infrastructure cybersecurity</li>
           <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top 10</a> - Standard awareness document for developers and web application security</li>
-          <li><a href="https://cheatsheetseries.owasp.org/" target="_blank">OWASP Cheat Sheet Series</a> - Concise collection of high value information on specific application security topics</li>
-          <li><a href="https://csrc.nist.gov/Projects/risk-management/about-rmf" target="_blank">NIST Risk Management Framework</a> - Risk management process for federal information systems</li>
-          <li><a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank">ISO 27001</a> - International standard for information security management systems</li>
-        </ul>
-
-        <h2>Security News & Research</h2>
-        <ul>
           <li><a href="https://krebsonsecurity.com/" target="_blank">Krebs on Security</a> - In-depth security news and investigation</li>
           <li><a href="https://www.schneier.com/" target="_blank">Schneier on Security</a> - Influential blog on security and privacy</li>
-          <li><a href="https://www.darkreading.com/" target="_blank">Dark Reading</a> - Cybersecurity news, analysis and insight</li>
-          <li><a href="https://threatpost.com/" target="_blank">Threatpost</a> - Independent news site covering cybersecurity</li>
-          <li><a href="https://www.bleepingcomputer.com/" target="_blank">BleepingComputer</a> - Computer help and security news</li>
         </ul>
 
         <h2>Incident Response & Digital Forensics</h2>
@@ -278,9 +299,6 @@ class ObsidianNav {
           <li><a href="https://www.sans.org/white-papers/33901/" target="_blank">SANS Incident Response Process</a> - Comprehensive IR methodology</li>
           <li><a href="https://github.com/meirwah/awesome-incident-response" target="_blank">Awesome Incident Response</a> - Curated list of IR tools and resources</li>
           <li><a href="https://www.volatilityfoundation.org/" target="_blank">Volatility Framework</a> - Advanced memory forensics framework</li>
-          <li><a href="https://www.sleuthkit.org/" target="_blank">The Sleuth Kit</a> - Collection of command line digital forensics tools</li>
-          <li><a href="https://www.autopsy.com/" target="_blank">Autopsy</a> - Digital forensics platform and graphical interface</li>
-          <li><a href="https://github.com/google/grr" target="_blank">GRR Rapid Response</a> - Incident response framework for remote live forensics</li>
         </ul>
 
         <h2>Security Tools & Resources</h2>
@@ -288,28 +306,6 @@ class ObsidianNav {
           <li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank">PayloadsAllTheThings</a> - Useful payloads and bypass for Web Application Security</li>
           <li><a href="https://gtfobins.github.io/" target="_blank">GTFOBins</a> - Unix binaries that can be exploited by an attacker</li>
           <li><a href="https://github.com/danielmiessler/SecLists" target="_blank">SecLists</a> - Collection of multiple types of lists used during security assessments</li>
-          <li><a href="https://github.com/carlospolop/PEASS-ng" target="_blank">PEASS-ng</a> - Privilege Escalation Awesome Scripts SUITE</li>
-          <li><a href="https://www.metasploit.com/" target="_blank">Metasploit</a> - Penetration testing framework</li>
-          <li><a href="https://portswigger.net/burp" target="_blank">Burp Suite</a> - Web application security testing platform</li>
-          <li><a href="https://nmap.org/" target="_blank">Nmap</a> - Network discovery and security auditing utility</li>
-          <li><a href="https://www.wireshark.org/" target="_blank">Wireshark</a> - Network protocol analyzer</li>
-        </ul>
-
-        <h2>Cloud Security</h2>
-        <ul>
-          <li><a href="https://github.com/prowler-cloud/prowler" target="_blank">Prowler</a> - Open source security tool for AWS, Azure and GCP</li>
-          <li><a href="https://github.com/nccgroup/ScoutSuite" target="_blank">ScoutSuite</a> - Multi-cloud security auditing tool</li>
-          <li><a href="https://cloudsplaining.readthedocs.io/" target="_blank">Cloudsplaining</a> - AWS IAM security assessment tool</li>
-          <li><a href="https://github.com/bridgecrewio/checkov" target="_blank">Checkov</a> - Static code analysis tool for infrastructure-as-code</li>
-        </ul>
-
-        <h2>Security Training & Certifications</h2>
-        <ul>
-          <li><a href="https://www.sans.org/" target="_blank">SANS Institute</a> - Information security training and certification</li>
-          <li><a href="https://www.offensive-security.com/" target="_blank">Offensive Security</a> - Penetration testing training and certifications</li>
-          <li><a href="https://tryhackme.com/" target="_blank">TryHackMe</a> - Learn cybersecurity through hands-on exercises</li>
-          <li><a href="https://hackthebox.com/" target="_blank">Hack The Box</a> - Penetration testing labs</li>
-          <li><a href="https://portswigger.net/web-security" target="_blank">PortSwigger Web Security Academy</a> - Free online web security training</li>
         </ul>
       </div>
     `;
@@ -337,8 +333,6 @@ class ObsidianNav {
       <div class="content-section">
         <h2>Technology & Industry Analysis</h2>
         <ul>
-          <li><a href="https://www.wired.com/story/the-wired-guide-to-protecting-yourself-from-government-surveillance/">The WIRED Guide to Protecting Yourself From Government Surveillance</a>. Published 2024-11-12</li>
-          <li><a href="https://freedom.press/digisec/blog/choosing-a-vpn/">An in-depth guide to choosing a VPN</a>. Published 2018-06-29 by David Huerta</li>
           <li><a href="https://motherduck.com/blog/big-data-is-dead/">Big Data is Dead</a>. Published 2023-02-07 by Jordan Tigani</li>
           <li><a href="https://a16z.com/its-time-to-build/">It's Time to Build</a>. Published 2020-04-18 by Marc Andressen</li>
           <li><a href="https://a16z.com/the-techno-optimist-manifesto/">The Techno-Optimist Manifesto</a>. Published 2023-10-16 by Marc Andressen</li>
@@ -347,22 +341,13 @@ class ObsidianNav {
           <li><a href="https://leighmariebraswell.substack.com/p/overview-and-applications-of-large">Overview & Applications of Large Language Models (LLMs)</a> from Leigh Marie Braswell</li>
           <li><a href="http://joschu.net/blog/opinionated-guide-ml-research.html">An Opinionated Guide to ML Research</a> John Schulman</li>
           <li><a href="https://paulgraham.com/greatwork.html?ref=thediff.co">How To Do Great Work</a> by Paul Graham</li>
-          <li><a href="https://menlovc.com/perspective/ai-for-security-eight-areas-of-opportunity/">AI for Security: Eight Areas of Opportunity, from Menlo Ventures</a></li>
-          <li><a href="https://www.rippling.com/blog/engineering-siem-part-1">Why did we need to build our own SIEM? from Rippling</a></li>
-          <li><a href="https://www.datadoghq.com/blog/key-kubernetes-audit-logs-for-monitoring-cluster-security/">Key Kubernetes audit logs for monitoring cluster security, from Datadog</a></li>
         </ul>
 
         <h2>Research Papers & Technical Content</h2>
         <ul>
-          <li><a href="https://defcon.org/images/defcon-26/DEF%20CON%2026%20voting%20village%20report.pdf">DEF CON 26 Voting Village</a></li>
           <li><a href="https://www.eff.org/files/2018/02/20/malicious_ai_report_final.pdf">Malicious AI Report</a></li>
           <li><a href="https://web.stanford.edu/~engler/BLOC-coverity.pdf">Using Static Analysis to Find Bugs in the Real World</a></li>
           <li><a href="https://www.youtube.com/watch?v=L0KuAx1COEk">MIT Pathway to Fusion Energy (IAP 2017) - Zach Hartwig</a></li>
-        </ul>
-
-        <h2>Philosophy & Methodology</h2>
-        <ul>
-          <li><a href="https://www.dreamsongs.com/RiseOfWorseIsBetter.html" target="_blank"> Worse Is Better</a> - UNIX philosophy and design principles</li>
         </ul>
       </div>
     `;
@@ -371,10 +356,10 @@ class ObsidianNav {
   getWeb3Content() {
     return `
       <div class="content-section">
-        <h2>Foundational Papers</h2>
+        <h2>Web3 / Crypto Resources</h2>
         <ul>
-          <li><a href="https://bitcoin.org/bitcoin.pdf" target="_blank">Bitcoin: A Peer-to-Peer Electronic Cash System</a> - Satoshi Nakamoto</li>
-          <li><a href="https://ethereum.org/en/whitepaper/" target="_blank">Ethereum Whitepaper</a> - Vitalik Buterin</li>
+          <li><a href="https://bitcoin.org/bitcoin.pdf">Satoshi White Paper</a></li>
+          <li><a href="https://ethereum.org/en/whitepaper/">Ethereum Whitepaper</a></li>
         </ul>
 
         <h2>NFT Collection</h2>
