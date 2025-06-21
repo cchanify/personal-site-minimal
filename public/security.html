@@ -1,158 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
-  <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3QKM22K088');
-    </script>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Curated cybersecurity resources, research, and tools by Connor Hanify, Security Engineer at Databricks. News, frameworks, and learning resources for security professionals.">
-    <meta name="author" content="Connor Hanify">
-    <meta name="keywords" content="cybersecurity resources, security research, MITRE ATT&CK, incident response, Connor Hanify, Databricks security">
-    <title>Security Resources - Connor Hanify</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/dark-mode.css" rel="stylesheet">
-    <link href="css/enhanced-content.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  </head>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3QKM22K088');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curated cybersecurity resources, research, and tools by Connor Hanify, Security Engineer at Databricks.">
+  <meta name="author" content="Connor Hanify">
+  <meta name="keywords" content="cybersecurity resources, security research, MITRE ATT&CK, incident response, Connor Hanify, Databricks security">
+  <title>Security Resources - Connor Hanify</title>
+  
+  <!-- Redirect to new layout -->
+  <script>
+    window.location.href = '/#security-resources';
+  </script>
+  
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
 
-  <body class="d-flex text-left text-black">
-    <div class="cover-container d-flex w-75 h-100 p-3 mx-auto flex-column">
-      <header class="mb-auto">
-        <div>
-          <h3 class="float-md-start mb-0">connor hanify</h3>
-          <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" href="index.html">about</a>
-            <a class="nav-link" href="links.html">links</a>
-            <a class="nav-link active" href="security.html"><b>security</b></a>
-          </nav> 
-        </div>
-      </header>
-
-      <main class="p-3">
-        <h4>Blogs</h4>
-        <ul>
-          <li><a href="https://this.weekinsecurity.com/">this week in security</a> by Zach Whittaker</li>
-          <li><a href="https://tldrsec.com/">tl;dr sec</a> by Clint Gibler</li>
-          <li>Substack: <a href="https://www.detectionengineering.net/">Detection Engineering Weekly</a></li>
-        </ul>
-
-        <h4>Websites</h4>
-        <ul>
-          <li><a href="https://databreaches.net/">DataBreaches</a></li>
-          <li>MITRE <a href="https://emb3d.mitre.org/?utm_source=substack&utm_medium=email">EMB3D</a> knowledge base of cyber threats to embedded devices</li>
-          <li>MITRE <a href="https://attack.mitre.org/">ATT&CK</a> knowledge base of adversary tactics and techniques</li>
-          <li>MITRE <a href="https://atlas.mitre.org/matrices/ATLAS">ATLAS</a> machine learning attack matrix</li>
-          <li><a href="https://hackingthe.cloud/">Hacking The Cloud</a> is an encyclopedia of attacks/tactics/techniques for cloud exploitation</li>
-          <li><a href="https://github.com/notdls/known-breaches?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-232-github-actions-cache-poisoning-rust-red-team-tools-prioritizing-detections">Known Breaches</a></li>
-        </ul>
-
-        <h4>Conference Talk Compilations</h4>
-        <ul>
-          <li><a href="https://www.youtube.com/playlist?list=PLdq8VB0hSfcYjWMBLrItQTNSbhXZ-jElD">AWS re:Invent 2024 Security Talks</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt">DEF CON 32 Main Stage Talks</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLsfnCRA9QVnQ4UWSOWiLKJci3_isxI3U6">SANS CloudSecNext Summit 2024</a></li>
-        </ul>
-
-        <h4>Guides</h4>
-        <ul>
-          <li>Collection of <a href="https://start.me/p/9oJvxx/applying-llms-genai-to-cyber-security">LLM resources</a> related to security. From Dylan Williams</li>
-          <li><a href="https://saweis.net/crypto.html">Theory and Practice of Cryptography Mini-Course</a>: taught in 2007 at Google</li>
-          <li><a href="https://github.com/blackorbird/APT_REPORT?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-239-llm-vulnerability-detection-apt-reports-learn-exploit-development">APT_REPORT</a> collected by @blackorbird</li>
-          <li>CISA: <a href="https://www.cisa.gov/cyber-guidance-small-businesses">Cyber Guidance for Small Business</a> CISA published 2024-04-01</li>
-          <li><a href="https://github.com/vm32/Linux-Incident-Response?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-214-poisoning-github-s-runner-images-fuzzing-aws-waf-llm-powered-honeypot">Incident Response Linux</a></li>
-        </ul>
-
-        <h4>Companies with Good Security Blogs</h4>
-        <ul>
-          <li><a href="https://securitylabs.datadoghq.com/">Datadog security labs</a></li>
-          <li><a href="https://blog.cloudflare.com/tag/security/">CloudFlare Security Blog</a></li>
-          <li><a href="https://www.wiz.io/blog/tag/security">Wiz Security Blog</a></li>
-          <li><a href="https://aws.amazon.com/blogs/security/">AWS Security Blog</a></li>
-        </ul>
-
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="https://databreaches.net/?page_id=112332">Data Breaches</a></li>
-          <li><a href="https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-247-linkedin-s-ai-security-posture-platform-pypi-defaults-iam-least-privilege">URL Validation Cheat Sheet</a></li>
-          <li><a href="https://kubenomicon.com/Kubenomicon.html">Kubenomicon</a> is a resource to understand Kubernetes from an offensive perspective</li>
-          <li><a href="https://microsoft.github.io/Threat-Matrix-for-Kubernetes/">Microsoft - Threat Matrix for Kubernetes</a></li>
-          <li><a href="https://github.com/anvilogic-forge/armory">Detection Armory by Anvilogic Forge</a></li>
-          <li><a href="https://threats.wiz.io/defenses?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-238-security-engineering-google-interview-notes-bsidessf-talks-github-ci-cd-egress-filtering">Cloud Threat Landscapes</a></li>
-          <li><a href="https://github.com/dwillowtree/diana">DIANA</a>. DIANA automates the creation of detections from threat intelligence using Large Language Models (LLMs)</li>
-          <li><a href="https://bellingcat.gitbook.io/toolkit">Open Source Investigation Toolkit</a></li>
-          <li><a href="https://github.com/BushidoUK/Ransomware-Tool-Matrix">Ransomware Tool Matrix</a></li>
-        </ul>
-
-        <h4>Conferences</h4>
-        <ul>
-          <li><a href="https://limacharlie.io/blog/mssn-ctrl-2024-speaker-announcement">MSSN CNTRL (2024)</a></li>
-        </ul>
-
-        <h4>Videos</h4>
-        <ul>
-          <li><a href="https://www.youtube.com/watch?v=x9va5ZQuAMI&list=PLO8_Yc4h5cIoDD_81sjgFFnRHG-pX_e_C&index=10">The impact of digital forensics in IR investigations</a> | Carly Battaile and Partha Alwar | MSSN CTRL (2024)</li>
-          <li><a href="https://www.youtube.com/watch?v=cMkYrypg0_Y&list=PLO8_Yc4h5cIoDD_81sjgFFnRHG-pX_e_C&index=19">Using AI to reduce toil in detection writing</a> | Dylan Williams | MSSN CTRL (2024)</li>
-          <li><a href="https://www.youtube.com/watch?v=BPh4Hc3TH74">A decade of defense: securing the largest US crypto exchange</a> | Philip Martin | MSSN CTRL 2024</li>
-          <li><a href="https://www.youtube.com/watch?v=cB7RCAAS4ik&list=PLdh-RwQzDsaNWBex2I09OFLCph7l_KnQE">Kubernetes Security Fundamentals: API Security</a> - Part 1. Published 2024-02-13</li>
-          <li>AppSecCali 2019 - <a href="https://www.youtube.com/watch?v=6iNpqTZrwjE">Startup security: Starting a security program at a startup</a> - Evan Johnson</li>
-          <li>BSidesSF 2024 - <a href="https://www.youtube.com/watch?v=DyRxMmypt_g">Startup Security</a>, 2nd Edition, published 2024-07-08 Evan Johnson</li>
-          <li>DEF CON 32 - <a href="https://www.youtube.com/watch?v=pTSEViCwAig&list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt&index=9">On Your Ocean's 11 Team, I'm the AI Guy</a> (technically Girl) - Harriet Farlow</li>
-        </ul>
-
-        <h4>Papers</h4>
-        <ul>
-          <li><a href="https://arxiv.org/abs/2410.17351">Hierarchical Multi-agent Reinforcement Learning for Cyber Network Defense</a>. Submitted 2024-10-22 Alina Oprea</li>
-          <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2023/final">Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations</a>. Published 2024-01-15 Alina Oprea</li>
-          <li><a href="https://arxiv.org/abs/1811.01134">A Marauder's Map of Security and Privacy in Machine Learning</a>. Published 2018-11-03</li>
-          <li><a href="https://sweis.medium.com/most-cited-security-papers-from-2015-2019-d21515db3681">Most Cited Security Papers</a> from 2015–2019.</li>
-          <li>CISA: <a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development">Deploying AI Systems Securely</a>. Published 2024-04-01 CISA</li>
-        </ul>
-
-        <h4>Articles</h4>
-          <ul>
-            <li><a href="https://billatnapier.medium.com/towards-zero-trust-and-attribute-based-encryption-a3bd935eb99a">Towards Zero Trust and Attribute-Based Encryption</a>. Published 2024-11-16</li>
-            <li><a href="https://www.datadoghq.com/blog/datadog-detection-as-code/">How we use Datadog for detection as code</a>. Published 2024-10-11</li>
-            <li><a href="https://srajangupta.substack.com/p/paved-roads-secure-by-design-more?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-257-autonomous-ai-hacking-buying-us-east-1-macos-security">Paved Roads? Secure-by-Design?? More Buzzwords???</a></li>
-            <li><a href="https://cyberscoop.com/north-korea-macos-malware-flutter-jamf/">North Korean-linked hackers were caught experimenting with new macOS malware</a>. Published 2024-11-12</li>
-            <li><a href="https://www.securityweek.com/palo-alto-networks-confirms-new-firewall-zero-day-exploitation/">Palo Alto Networks Confirms New Firewall Zero-Day Exploitation</a>. Published 2024-11-15</li>
-            <li><a href="https://news.sophos.com/en-us/2024/10/31/pacific-rim-neutralizing-china-based-threat/">Pacific Rim: Inside the Counter-Offensive—The TTPs Used to Neutralize China-Based Threats</a>. Published 2024-10-31 by Sophos</li>
-            <li><a href="https://www.datadoghq.com/state-of-cloud-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-253-state-of-cloud-security-applying-ai-to-cybersecurity-living-off-the-land-esxi">State of Cloud Security</a>. Published 2024-10-01 from Datadog Security Labs</li>
-            <li><a href="https://www.gyan.ca/things-to-know-about-your-tech-salary/">Things You Need to Know About Your Tech Salary</a>, by Jeevan Singh</li>
-            <li><a href="https://www.gyan.ca/lessons-in-security-tooling-strategies-for-success/">Lessons in Security Tooling: Strategies for Success</a>, by Jeevan Singh</li>
-            <li><a href="https://www.linkedin.com/pulse/microsofts-dangerous-addiction-security-revenue-alex-stamos-1ukzc/">Microsoft's Dangerous Addiction To Security Revenue</a>, published 2024-01-26 by Alex Stamos</li>
-            <li><a href="https://akumansley.org/Essays/Startup+Security">Startup Security</a> by Andrew Kumansley</li>
-            <li><a href="https://medium.com/@vanvleet/threat-detection-strategy-a-visual-model-b8f4fa518441">Plotting a Winning Threat Detection Strategy: A Visual Model</a>. Published 2024-01-22 by Van Vleet</li>
-            <li><a href="https://www.plerion.com/blog/things-you-wish-you-didnt-need-to-know-about-s3">Things you wish you didn't need to know about S3</a>, published 2024-05-30 by Daniel Grzelak</li>
-            <li><a href="https://www.elastic.co/blog/detections-as-code-elastic-security?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-234-awesome-ci-cd-attacks-stride-gpt-non-production-aws-attack-surface">Rolling your own Detections as Code with Elastic Security</a>. Published 2024-05-14</li>
-            <li><a href="https://tldrsec.com/p/blog-startup-security-starting-a-security-program-at-a-startup">Startup Security: Starting a Security Program at a Startup</a>. Published 2022-01-14 by Clint Gibler</li>
-            <li><a href="https://www.greynoise.io/blog/greynoise-intelligence-discovers-zero-day-vulnerabilities-in-live-streaming-cameras-with-the-help-of-ai">GreyNoise Intelligence Discovers Zero-Day Vulnerabilities in Live Streaming Cameras with the Help of AI</a>. Published 2024-10-31</li>
-            <li><a href="https://calebsima.com/2024/06/17/predicting-ais-impact-on-security/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-241-understanding-crowdstrike-aws-pentesting-guide-rule-explorer-project">Predicting AI's Impact on Security</a>. Published 2024-06-17</li>
-            <li><a href="https://www.magonia.io/blog/five-year-retrospective-detection-as-code?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-241-understanding-crowdstrike-aws-pentesting-guide-rule-explorer-project">A Five Year Retrospective on Detection as Code</a>. Published 2024-06-14 by Caleb Sima</li>
-            <li><a href="https://www.aquasec.com/blog/undetected-hard-code-secrets-expose-corporations/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-239-llm-vulnerability-detection-apt-reports-learn-exploit-development">Phantom Secrets: Undetected Secrets Expose Major Corporations</a>. Published 2024-06-23</li>
-            <li><a href="https://www.synacktiv.com/publications/hijacking-github-runners-to-compromise-the-organization?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-236-interview-questions-securing-your-snowflake-red-teaming-llms">Hijacking GitHub runners to compromise the organization</a>. Published 2024-05-22</li>
-            <li><a href="https://aws.amazon.com/blogs/security/methodology-for-incident-response-on-generative-ai-workloads/?utm_source=tldrsec.com&utm_medium=newsletter&utm_campaign=tl-dr-sec-249-atomic-cloud-iocs-russian-apt-tool-matrix-netflix-paved-road-webinar">Methodology for incident response on generative AI workloads</a> from AWS Security Blog. Published 2024-09-16</li>
-            <li><a href="https://www.darkreading.com/identity-access-management-security/nist-drops-password-complexity-mandatory-reset-rules?utm_source=substack&utm_medium=email">NIST Drops Password Complexity, Mandatory Reset Rules</a>. Published 2204-09-25</li>
-            <li><a href="https://blog.cloudflare.com/how-cloudflare-auto-mitigated-world-record-3-8-tbps-ddos-attack/?utm_source=newsletter.cybersecurityhq.io&utm_medium=newsletter&utm_campaign=cyber-attacks-double-since-2020/">How Cloudflare auto-mitigated world record 3.8 Tbps DDoS attack</a>. Published 2024-10-02</li>
-            <li><a href="https://www.slideshare.net/slideshow/a-big-dashboard-of-problemspdf/256166731">A Big Dashboard of Problems.pdf</a>. Published 2023-02-28 by #TravisMcPeak</li>
-          </ul>
-
-
-      </main>
-
-      <footer class="mt-auto text-black text-center">
-        <a href="https://github.com/cchanify" target="_blank" class="text-black">Github</a> | 
-        <a href="https://www.linkedin.com/in/connor-hanify-848063114/" target="_blank" class="text-black">LinkedIn</a>
-      </footer>
-    
-    </div>
-    <script src="js/dark-mode.js"></script>
-  </body>
-
+<body>
+  <div style="text-align: center; padding: 2rem;">
+    <h1>Redirecting...</h1>
+    <p>This page has moved to the new layout.</p>
+    <p><a href="/#security-resources">Click here if you're not redirected automatically</a></p>
+  </div>
+</body>
 </html>
