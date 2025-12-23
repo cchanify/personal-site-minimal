@@ -3,3 +3,9 @@
 
 # Marketing and strategy docs
 .marketing-todos.md
+
+# Dependencies
+node_modules/
+
+# macOS files
+.DS_Store
