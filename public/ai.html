@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QKM22K088');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Curated AI and machine learning resources for security professionals. LLM security, AI frameworks, and practical applications by Connor Hanify, Security Engineer at Databricks.">
+    <meta name="author" content="Connor Hanify">
+    <meta name="keywords" content="AI security, LLM, machine learning, artificial intelligence, prompt injection, OWASP, RAG, detection automation, Connor Hanify, Databricks">
+    <title>AI Resources - Connor Hanify</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://connorhanify.com/ai.html">
+    <meta property="og:title" content="AI Resources - Connor Hanify">
+    <meta property="og:description" content="Curated AI and machine learning resources for security professionals. LLM security, AI frameworks, and practical applications by Connor Hanify.">
+    <meta property="og:image" content="https://connorhanify.com/assets/favicon.ico">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://connorhanify.com/ai.html">
+    <meta property="twitter:title" content="AI Resources - Connor Hanify">
+    <meta property="twitter:description" content="Curated AI and machine learning resources for security professionals. LLM security, AI frameworks, and practical applications by Connor Hanify.">
+    <meta property="twitter:image" content="https://connorhanify.com/assets/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link href="css/enhanced-content.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  </head>
+
+  <body class="d-flex text-left text-black">
+    <div class="cover-container d-flex w-75 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">connor hanify</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link" href="index.html">about</a>
+            <a class="nav-link active" href="ai.html"><b>ai</b></a>
+            <a class="nav-link" href="links.html">links</a>
+            <a class="nav-link" href="security.html">security</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="p-3">
+        <p class="text-muted"><em>Last updated: January 2026</em></p>
+
+        <h4>Frameworks & Standards</h4>
+        <ul>
+          <li><a href="https://genai.owasp.org/">OWASP GenAI Security Project</a> - The definitive guide for securing LLM applications, with the LLM Top 10 vulnerabilities framework used across the industry</li>
+          <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP LLM Top 10 (2025)</a> - Prompt injection is #1, appearing in 73% of production AI deployments</li>
+          <li><a href="https://atlas.mitre.org/matrices/ATLAS">MITRE ATLAS</a> - Machine learning attack matrix covering adversarial ML techniques from model poisoning to evasion attacks</li>
+          <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2023/final">NIST Adversarial Machine Learning</a> - Taxonomy and terminology of attacks and mitigations for ML systems</li>
+          <li><a href="https://www.anthropic.com/news/model-context-protocol">Model Context Protocol (MCP)</a> - Anthropic's open standard for connecting AI systems with data sources, replacing fragmented integrations</li>
+          <li><a href="https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development">CISA: Deploying AI Systems Securely</a> - Government guidance on secure AI system development</li>
+        </ul>
+
+        <h4>Security Tools & Projects</h4>
+        <ul>
+          <li><a href="https://github.com/dwillowtree/diana">DIANA</a> - Automates detection rule creation from threat intelligence using LLMs, created by Dylan Williams for reducing SOC toil</li>
+          <li><a href="https://blogs.night-wolf.io/sigmagen-ai-powered-attck-mapped-threat-detection-with-sigma-rules">SigmaGen</a> - AI-powered system that extracts MITRE ATT&CK techniques from threat intel and generates SIGMA detection rules automatically</li>
+          <li><a href="https://arxiv.org/html/2407.05194v1">LLMCloudHunter</a> - Research framework leveraging LLMs to generate detection rules from cloud-based cyber threat intelligence</li>
+          <li><a href="https://start.me/p/9oJvxx/applying-llms-genai-to-cyber-security">Dylan Williams' LLM Security Collection</a> - Comprehensive curated list of LLM and GenAI resources for cybersecurity applications</li>
+          <li><a href="https://github.com/ossf/ai-ml-security">OpenSSF AI/ML Security Working Group</a> - Explores security risks in LLMs, GenAI, and ML systems including prompt injection and model poisoning</li>
+          <li><a href="https://www.lakera.ai/blog/guide-to-prompt-injection">Lakera Guard</a> - Platform for detecting and defending against prompt injection attacks in production LLM applications</li>
+        </ul>
+
+        <h4>Research Papers</h4>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2410.17351">Hierarchical Multi-agent Reinforcement Learning for Cyber Network Defense</a> - Alina Oprea's research on applying RL to automated network defense</li>
+          <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2023/final">Adversarial Machine Learning: A Taxonomy and Terminology</a> - NIST's comprehensive framework for ML attacks and mitigations, authored by Alina Oprea</li>
+          <li><a href="https://arxiv.org/abs/1811.01134">A Marauder's Map of Security and Privacy in Machine Learning</a> - Foundational paper mapping the ML security threat landscape</li>
+          <li><a href="https://arxiv.org/html/2508.10677v1">Advancing Autonomous Incident Response: Leveraging LLMs and CTI</a> - RAG-based framework for incident response automation achieving 22% faster recovery times</li>
+          <li><a href="https://www.mdpi.com/2624-800X/5/4/95">AI-Augmented SOC: A Survey of LLMs and Agents for Security Automation</a> - Comprehensive survey of LLM applications in security operations</li>
+          <li><a href="https://arxiv.org/abs/2306.05499">Prompt Injection Attack Against LLM-Integrated Applications</a> - Academic research on the most common AI exploit in 2025</li>
+        </ul>
+
+        <h4>Courses & Learning</h4>
+        <ul>
+          <li><a href="https://mlip-cmu.github.io/s2025/">CMU Machine Learning in Production / AI Engineering</a> - Carnegie Mellon's course on building production ML systems</li>
+          <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Building Effective Agents</a> - Anthropic's engineering guide on when and how to build LLM agents vs. workflows</li>
+          <li><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">A Practical Guide to Building Agents</a> - OpenAI's comprehensive PDF guide for agent development</li>
+          <li><a href="https://www.sans.org/cyber-security-courses/genai-llm-application-security">SEC545S: GenAI and LLM Application Security</a> - SANS course on securing generative AI applications</li>
+        </ul>
+
+        <h4>Articles & Analysis</h4>
+        <ul>
+          <li><a href="https://medium.com/@dylanhwilliams/utilizing-generative-ai-and-llms-to-automate-detection-writing-5e4ea074072e">Utilizing Generative AI and LLMs to Automate Detection Writing</a> - Dylan Williams' practical guide on using LLMs for detection engineering with hyper-specific prompts</li>
+          <li><a href="https://calebsima.com/2024/06/17/predicting-ais-impact-on-security/">Predicting AI's Impact on Security</a> - Caleb Sima's analysis of how AI will transform security operations</li>
+          <li><a href="https://www.greynoise.io/blog/greynoise-intelligence-discovers-zero-day-vulnerabilities-in-live-streaming-cameras-with-the-help-of-ai">Discovering Zero-Days with AI</a> - Case study of GreyNoise using AI to find vulnerabilities in IoT devices</li>
+          <li><a href="https://aws.amazon.com/blogs/security/methodology-for-incident-response-on-generative-ai-workloads/">Methodology for Incident Response on Generative AI Workloads</a> - AWS Security Blog guide for responding to AI-specific incidents</li>
+          <li><a href="https://www.magonia.io/blog/five-year-retrospective-detection-as-code">A Five Year Retrospective on Detection as Code</a> - Caleb Sima's reflection on detection automation trends</li>
+          <li><a href="https://tldrsec.com/p/tldr-every-ai-talk-bsideslv-blackhat-defcon-2024">TL;DR: Every AI Talk from BSidesLV, Black Hat, and DEF CON 2024</a> - Comprehensive summary of AI security conference content by Clint Gibler</li>
+          <li><a href="https://www.microsoft.com/en-us/msrc/blog/2025/07/how-microsoft-defends-against-indirect-prompt-injection-attacks">How Microsoft Defends Against Indirect Prompt Injection</a> - Microsoft's defense-in-depth approach to the #1 LLM vulnerability</li>
+        </ul>
+
+        <h4>Videos & Conference Talks</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=cMkYrypg0_Y">Using AI to reduce toil in detection writing</a> - Dylan Williams at MSSN CTRL 2024, demonstrating practical LLM applications in SOC automation</li>
+          <li><a href="https://www.youtube.com/watch?v=pTSEViCwAig">On Your Ocean's 11 Team, I'm the AI Guy</a> - Harriet Farlow's DEF CON 32 talk on AI in offensive security</li>
+          <li><a href="https://www.youtube.com/playlist?list=PLdq8VB0hSfcYjWMBLrItQTNSbhXZ-jElD">AWS re:Invent 2024 Security Talks</a> - Playlist featuring AI-enhanced security innovations announced at re:Invent</li>
+          <li><a href="https://www.youtube.com/playlist?list=PL9fPq3eQfaaB2scbXRczwvjVH0ckX4bwt">DEF CON 32 Main Stage Talks</a> - Includes multiple AI security presentations</li>
+        </ul>
+
+        <h4>Agent Development Tools</h4>
+        <ul>
+          <li><a href="https://langchain-ai.github.io/langgraph/">LangGraph</a> - Framework for building stateful, multi-actor LLM applications with cycles and controllability</li>
+          <li><a href="https://aws.amazon.com/bedrock/agents/">Amazon Bedrock Agents</a> - Fully managed service for building and deploying generative AI agents</li>
+          <li><a href="https://rivet.ironcladapp.com/">Rivet</a> - Open-source visual AI programming environment for prototyping and debugging LLM applications</li>
+          <li><a href="https://www.vellum.ai/">Vellum</a> - Development platform for building, testing, and monitoring production LLM applications</li>
+          <li><a href="https://github.com/radames/LLM-automator">LLM Automator</a> - Tool for automating workflows with large language models</li>
+        </ul>
+
+        <h4>Companies & Platforms</h4>
+        <ul>
+          <li><a href="https://huggingface.co/models">HuggingFace Models</a> - Open-source model hub with thousands of pre-trained models and datasets</li>
+          <li><a href="https://www.anthropic.com/">Anthropic</a> - AI safety company behind Claude, focusing on responsible AI development</li>
+          <li><a href="https://mindgard.ai/blog/best-ai-security-tools-for-llm-and-genai">Mindgard</a> - AI red teaming platform for testing LLM security, simulating prompt injection and jailbreak scenarios</li>
+        </ul>
+
+        <h4>People to Follow</h4>
+        <ul>
+          <li><a href="https://www.khoury.northeastern.edu/home/alina/publications.html">Alina Oprea</a> - Northeastern University Professor researching machine learning and security, author of NIST ML adversarial framework</li>
+          <li><a href="https://www.linkedin.com/in/richharang/">Rich Harang</a> - Principal Security Architect at NVIDIA, specializing in ML/AI systems security</li>
+          <li>Dylan Williams - Detection engineering expert pioneering LLM applications in security operations, creator of DIANA</li>
+          <li><a href="https://simonwillison.net/">Simon Willison</a> - Creator of Datasette, writing extensively on LLM security and prompt injection research</li>
+        </ul>
+
+      </main>
+
+      <footer class="mt-auto text-black text-center">
+        <a href="mailto:connorchanify@gmail.com" class="text-black">Email</a> |
+        <a href="https://github.com/cchanify" target="_blank" class="text-black">Github</a> |
+        <a href="https://www.linkedin.com/in/connor-hanify-848063114/" target="_blank" class="text-black">LinkedIn</a>
+      </footer>
+
+    </div>
+    <script src="js/dark-mode.js"></script>
+  </body>
+
+</html>
