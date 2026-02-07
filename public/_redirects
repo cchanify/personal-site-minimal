@@ -1,0 +1,9 @@
+# Redirect www to non-www (all protocols)
+https://www.connorhanify.com/* https://connorhanify.com/:splat 301!
+http://www.connorhanify.com/* https://connorhanify.com/:splat 301!
+
+# Redirect HTTP to HTTPS for non-www
+http://connorhanify.com/* https://connorhanify.com/:splat 301!
+
+# Clean URLs - redirect index.html to root
+/index.html / 301
