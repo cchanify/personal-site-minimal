@@ -7,6 +7,27 @@
   port = 8889                    # Set dev server port
   functionsPort = 3999           # Set port for serverless functions
 
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.connorhanify.com/*"
+  to = "https://connorhanify.com/:splat"
+  status = 301
+  force = true
+
+# Redirect HTTP to HTTPS (non-www)
+[[redirects]]
+  from = "http://connorhanify.com/*"
+  to = "https://connorhanify.com/:splat"
+  status = 301
+  force = true
+
+# Redirect HTTP www to HTTPS non-www
+[[redirects]]
+  from = "http://www.connorhanify.com/*"
+  to = "https://connorhanify.com/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
