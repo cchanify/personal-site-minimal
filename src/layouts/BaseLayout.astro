@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import '../styles/dark-mode.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  ogUrl?: string;
+  activeNav: 'about' | 'ai' | 'links' | 'security' | 'blog';
+}
+
+const { title, description, canonicalUrl, ogUrl, activeNav } = Astro.props;
+const resolvedOgUrl = ogUrl ?? canonicalUrl;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Anti-FOUC: set theme before paint -->
+    <script is:inline>
+      (function() {
+        const s = localStorage.getItem('theme-preference');
+        const p = s || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', p);
+      })();
+    </script>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    <!-- Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QKM22K088');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content={description}>
+    <meta name="author" content="Connor Hanify">
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={resolvedOgUrl}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="https://connorhanify.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={resolvedOgUrl}>
+    <meta property="twitter:title" content={title}>
+    <meta property="twitter:description" content={description}>
+    <meta property="twitter:image" content="https://connorhanify.com/og-image.png">
+
+    <link rel="canonical" href={canonicalUrl}>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <header>
+        <div>
+          <h3 class="site-title">connor hanify</h3>
+          <p class="tagline">Security Engineer · Incident Response · Cloud Security</p>
+        </div>
+        <nav>
+          <a class:list={['nav-link', { active: activeNav === 'about' }]} href="/">about</a>
+          <a class:list={['nav-link', { active: activeNav === 'ai' }]} href="/ai/">ai</a>
+          <a class:list={['nav-link', { active: activeNav === 'links' }]} href="/links/">links</a>
+          <a class:list={['nav-link', { active: activeNav === 'security' }]} href="/security/">security</a>
+          <a class:list={['nav-link', { active: activeNav === 'blog' }]} href="/blog/">blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        <a href="mailto:connorchanify@gmail.com">Email</a>
+        <a href="https://github.com/cchanify" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/connor-hanify-848063114/" target="_blank" rel="noopener">LinkedIn</a>
+      </footer>
+    </div>
+
+    <script src="/js/dark-mode.js" is:inline></script>
+  </body>
+</html>
