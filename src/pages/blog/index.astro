@@ -9,7 +9,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 <BaseLayout
   title="Blog - Connor Hanify"
   description="Writing on security, AI, and technology by Connor Hanify, Security Engineer at Databricks."
-  canonicalUrl="https://connorhanify.com/blog/"
   activeNav="blog"
 >
   <h4>Blog</h4>
@@ -20,7 +19,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       {posts.map(post => (
         <li>
           <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-          <span class="text-muted"> — {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span class="text-muted"> — <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></span>
         </li>
       ))}
     </ul>

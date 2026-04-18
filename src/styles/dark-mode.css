@@ -6,8 +6,6 @@
   --text-link: #0d6efd;
   --text-link-hover: #0a58ca;
   --border-color: #dee2e6;
-  --nav-link-color: #000000;
-  --nav-link-active: #000000;
 }
 
 [data-theme="dark"] {
@@ -18,52 +16,24 @@
   --text-link: #66b3ff;
   --text-link-hover: #4da6ff;
   --border-color: #333333;
-  --nav-link-color: #ffffff;
-  --nav-link-active: #ffffff;
 }
 
 body {
-  background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: var(--text-link) !important;
+  color: var(--text-link);
 }
 
 a:hover {
-  color: var(--text-link-hover) !important;
+  color: var(--text-link-hover);
 }
 
 .nav-link {
-  color: var(--nav-link-color) !important;
-}
-
-.nav-link.active {
-  color: var(--nav-link-active) !important;
-}
-
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] p,
-[data-theme="dark"] li {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] footer a {
-  color: var(--text-link) !important;
-}
-
-[data-theme="dark"] footer a:hover {
-  color: var(--text-link-hover) !important;
+  color: var(--text-primary);
 }
 
 [data-theme="dark"] nft-card {
@@ -84,18 +54,18 @@ a:hover {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode-toggle:hover {
   background: var(--border-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.dark-mode-toggle:focus {
+.dark-mode-toggle:focus-visible {
   outline: 2px solid var(--text-link);
   outline-offset: 2px;
 }
@@ -111,5 +81,14 @@ a:hover {
     right: 10px;
     padding: 6px 10px;
     font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .dark-mode-toggle,
+  .dark-mode-toggle:hover {
+    transition: none;
+    transform: none;
   }
 }

@@ -5,32 +5,35 @@ import '../styles/dark-mode.css';
 interface Props {
   title: string;
   description: string;
-  canonicalUrl: string;
+  canonicalUrl?: string;
   ogUrl?: string;
   activeNav: 'about' | 'ai' | 'links' | 'security' | 'blog';
 }
 
 const { title, description, canonicalUrl, ogUrl, activeNav } = Astro.props;
-const resolvedOgUrl = ogUrl ?? canonicalUrl;
+const resolvedCanonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedOgUrl = ogUrl ?? resolvedCanonical;
+
+const THEME_COLOR_LIGHT = '#ffffff';
+const THEME_COLOR_DARK = '#121212';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Anti-FOUC: set theme before paint -->
-    <script is:inline>
-      (function() {
-        const s = localStorage.getItem('theme-preference');
-        const p = s || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', p);
+    <script is:inline define:vars={{ THEME_COLOR_LIGHT, THEME_COLOR_DARK }}>
+      (function () {
+        const stored = localStorage.getItem('theme-preference');
+        const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', preferred);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', preferred === 'dark' ? THEME_COLOR_DARK : THEME_COLOR_LIGHT);
       })();
     </script>
 
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
 
-    <!-- Google Analytics -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -43,29 +46,32 @@ const resolvedOgUrl = ogUrl ?? canonicalUrl;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content={description}>
     <meta name="author" content="Connor Hanify">
+    <meta name="theme-color" content={THEME_COLOR_LIGHT}>
     <title>{title}</title>
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content={resolvedOgUrl}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content="https://connorhanify.com/assets/favicon.ico">
+    <meta property="og:image" content="https://connorhanify.com/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
+    <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content={resolvedOgUrl}>
     <meta property="twitter:title" content={title}>
     <meta property="twitter:description" content={description}>
-    <meta property="twitter:image" content="https://connorhanify.com/assets/favicon.ico">
+    <meta property="twitter:image" content="https://connorhanify.com/og.png">
 
-    <link rel="canonical" href={canonicalUrl}>
+    <link rel="canonical" href={resolvedCanonical}>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
     <slot name="head" />
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <div class="site-wrapper">
       <header>
         <div>
@@ -73,15 +79,14 @@ const resolvedOgUrl = ogUrl ?? canonicalUrl;
           <p class="tagline">Security Engineer · Incident Response · Cloud Security</p>
         </div>
         <nav>
-          <a class:list={['nav-link', { active: activeNav === 'about' }]} href="/">about</a>
-          <a class:list={['nav-link', { active: activeNav === 'ai' }]} href="/ai/">ai</a>
-          <a class:list={['nav-link', { active: activeNav === 'links' }]} href="/links/">links</a>
-          <a class:list={['nav-link', { active: activeNav === 'security' }]} href="/security/">security</a>
-          <a class:list={['nav-link', { active: activeNav === 'blog' }]} href="/blog/">blog</a>
+          <a class:list={['nav-link', { active: activeNav === 'about' }]} aria-current={activeNav === 'about' ? 'page' : undefined} href="/">about</a>
+          <a class:list={['nav-link', { active: activeNav === 'ai' }]} aria-current={activeNav === 'ai' ? 'page' : undefined} href="/ai/">ai</a>
+          <a class:list={['nav-link', { active: activeNav === 'links' }]} aria-current={activeNav === 'links' ? 'page' : undefined} href="/links/">links</a>
+          <a class:list={['nav-link', { active: activeNav === 'security' }]} aria-current={activeNav === 'security' ? 'page' : undefined} href="/security/">security</a>
         </nav>
       </header>
 
-      <main>
+      <main id="main">
         <slot />
       </main>
 
@@ -92,6 +97,39 @@ const resolvedOgUrl = ogUrl ?? canonicalUrl;
       </footer>
     </div>
 
-    <script src="/js/dark-mode.js" is:inline></script>
+    <script is:inline define:vars={{ THEME_COLOR_LIGHT, THEME_COLOR_DARK }}>
+      (function () {
+        const STORAGE_KEY = 'theme-preference';
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const root = document.documentElement;
+
+        const getStored = () => localStorage.getItem(STORAGE_KEY);
+        const applyTheme = (theme) => {
+          root.setAttribute('data-theme', theme);
+          if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? THEME_COLOR_DARK : THEME_COLOR_LIGHT);
+          if (button) {
+            const isDark = theme === 'dark';
+            button.innerHTML = `<span class="toggle-icon">${isDark ? '☀️' : '🌙'}</span>${isDark ? 'Light' : 'Dark'}`;
+            button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+          }
+        };
+
+        const button = document.createElement('button');
+        button.className = 'dark-mode-toggle';
+        button.type = 'button';
+        button.addEventListener('click', () => {
+          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(STORAGE_KEY, next);
+          applyTheme(next);
+        });
+        document.body.appendChild(button);
+
+        applyTheme(root.getAttribute('data-theme') || 'light');
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!getStored()) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      })();
+    </script>
   </body>
 </html>

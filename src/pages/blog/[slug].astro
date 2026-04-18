@@ -17,12 +17,11 @@ const { Content } = await render(post);
 <BaseLayout
   title={`${post.data.title} - Connor Hanify`}
   description={post.data.description}
-  canonicalUrl={`https://connorhanify.com/blog/${post.id}/`}
   activeNav="blog"
 >
   <article>
     <h1>{post.data.title}</h1>
-    <p class="text-muted">{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
+    <p class="text-muted"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long' })}</time></p>
     <Content />
   </article>
 </BaseLayout>
