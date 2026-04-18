@@ -1,11 +1,15 @@
 [build]
-  publish = "public"
-  functions = "netlify/functions" # Path to the functions directory
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 [dev]
-  framework = "#static"          # Use static server
-  port = 8889                    # Set dev server port
-  functionsPort = 3999           # Set port for serverless functions
+  command = "npm run dev"
+  port = 8889
+  functionsPort = 3999
 
 # Redirect www to non-www
 [[redirects]]

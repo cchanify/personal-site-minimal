@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Blog - Connor Hanify"
+  description="Writing on security, AI, and technology by Connor Hanify, Security Engineer at Databricks."
+  canonicalUrl="https://connorhanify.com/blog/"
+  activeNav="blog"
+>
+  <h4>Blog</h4>
+  {posts.length === 0 ? (
+    <p class="text-muted">No posts yet.</p>
+  ) : (
+    <ul>
+      {posts.map(post => (
+        <li>
+          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+          <span class="text-muted"> — {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>

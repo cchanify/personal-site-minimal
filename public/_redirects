@@ -5,11 +5,8 @@ http://www.connorhanify.com/* https://connorhanify.com/:splat 301!
 # Redirect HTTP to HTTPS for non-www
 http://connorhanify.com/* https://connorhanify.com/:splat 301!
 
-# Clean URL redirects - work regardless of which navigation version is cached
-/ai /ai.html 200
-/security /security.html 200
-/links /links.html 200
-
-# Clean URLs - redirect index.html to root
+# Legacy .html URLs → clean paths
+/ai.html /ai/ 301!
+/security.html /security/ 301!
+/links.html /links/ 301!
 /index.html / 301!
-https://connorhanify.com/index.html https://connorhanify.com/ 301!

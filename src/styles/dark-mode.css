@@ -1,7 +1,4 @@
-/* Dark Mode Theme Variables and Styles */
-
 :root {
-  /* Light theme (default) */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #000000;
@@ -14,7 +11,6 @@
 }
 
 [data-theme="dark"] {
-  /* Dark theme */
   --bg-primary: #121212;
   --bg-secondary: #1e1e1e;
   --text-primary: #ffffff;
@@ -26,23 +22,10 @@
   --nav-link-active: #ffffff;
 }
 
-/* Apply theme variables to elements */
 body {
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.text-black {
-  color: var(--text-primary) !important;
-}
-
-.nav-link {
-  color: var(--nav-link-color) !important;
-}
-
-.nav-link.active {
-  color: var(--nav-link-active) !important;
 }
 
 a {
@@ -53,7 +36,42 @@ a:hover {
   color: var(--text-link-hover) !important;
 }
 
-/* Dark mode toggle button styles */
+.nav-link {
+  color: var(--nav-link-color) !important;
+}
+
+.nav-link.active {
+  color: var(--nav-link-active) !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] footer a {
+  color: var(--text-link) !important;
+}
+
+[data-theme="dark"] footer a:hover {
+  color: var(--text-link-hover) !important;
+}
+
+[data-theme="dark"] nft-card {
+  filter: brightness(0.9);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .dark-mode-toggle {
   position: fixed;
   top: 20px;
@@ -82,13 +100,11 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Icon styles for toggle */
 .toggle-icon {
   margin-right: 6px;
   font-size: 16px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .dark-mode-toggle {
     top: 10px;
@@ -96,57 +112,4 @@ a:hover {
     padding: 6px 10px;
     font-size: 12px;
   }
-}
-
-/* Override Bootstrap dark text classes in dark mode */
-[data-theme="dark"] .text-black {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .text-center {
-  color: var(--text-primary) !important;
-}
-
-/* Footer link styling */
-[data-theme="dark"] footer a {
-  color: var(--text-link) !important;
-}
-
-[data-theme="dark"] footer a:hover {
-  color: var(--text-link-hover) !important;
-}
-
-/* Container and content area adjustments */
-.cover-container {
-  background-color: transparent;
-}
-
-/* Navigation improvements */
-.nav-masthead .nav-link {
-  transition: color 0.3s ease;
-}
-
-/* NFT card and embedded content adjustments */
-[data-theme="dark"] nft-card {
-  filter: brightness(0.9);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Ensure proper contrast for all text elements */
-[data-theme="dark"] h1, 
-[data-theme="dark"] h2, 
-[data-theme="dark"] h3, 
-[data-theme="dark"] h4, 
-[data-theme="dark"] h5, 
-[data-theme="dark"] h6 {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] p {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] li {
-  color: var(--text-primary) !important;
 }
