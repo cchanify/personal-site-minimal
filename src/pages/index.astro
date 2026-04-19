@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import headshot from '../assets/headshot.jpeg';
 ---
 
 <BaseLayout
@@ -23,9 +25,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     })} />
   </Fragment>
 
-  <p>I am currently a Security Engineer at Databricks, where I am part of the incident response team. Before this, I worked on the security team at Uber, and as a Cyber Security Consultant at Aon Cyber Solutions (formerly Stroz Friedberg). I graduated from Middlebury College in 2019 with a Computer Science degree and Political Philosophy minor. At Middlebury I captained the <a href="http://sites.middlebury.edu/ultimate/2018/06/18/middlebury-guy-pranksters-2018-season-recap/" target="_blank" rel="noopener" aria-label="Middlebury Men's Ultimate Frisbee Team 2018 season recap">Men's Ultimate Frisbee Team</a>, participated in our computer science club, MiddleEndian, and tutored CS students.</p>
+  <div class="intro">
+    <div class="intro-text">
+      <p>I am currently a Security Engineer at Databricks, where I am part of the incident response team. Before this, I worked on the security team at Uber, and as a Cyber Security Consultant at Aon Cyber Solutions (formerly Stroz Friedberg). I graduated from Middlebury College in 2019 with a Computer Science degree and Political Philosophy minor. At Middlebury I captained the <a href="http://sites.middlebury.edu/ultimate/2018/06/18/middlebury-guy-pranksters-2018-season-recap/" target="_blank" rel="noopener" aria-label="Middlebury Men's Ultimate Frisbee Team 2018 season recap">Men's Ultimate Frisbee Team</a>, participated in our computer science club, MiddleEndian, and tutored CS students.</p>
+    </div>
+    <Image class="headshot" src={headshot} alt="Connor Hanify" width={440} />
+  </div>
 
   <p>I'm interested in technology, especially in products that help people live better. I am particularly curious about security, AI, biotech, and renewable energy, although I'm always ready to learn new things. I'm a fan of the <a href="https://www.dreamsongs.com/RiseOfWorseIsBetter.html" target="_blank" rel="noopener" aria-label="Worse Is Better UNIX philosophy">Worse Is Better</a> UNIX philosophy and a lover of minimalism.</p>
 
   <p>I also like to <a href="https://www.strava.com/athletes/chanify" target="_blank" rel="noopener" aria-label="Connor's Strava profile">bike, swim, and run</a>.</p>
 </BaseLayout>
+
+<style>
+  .intro {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .intro-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .intro-text p {
+    margin-top: 0;
+  }
+
+  .headshot {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  @media (max-width: 600px) {
+    .intro {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .headshot {
+      width: 160px;
+      height: 160px;
+    }
+  }
+</style>

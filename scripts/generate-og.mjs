@@ -4,7 +4,7 @@ import { dirname, resolve } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, '..');
-const sourceImage = resolve(projectRoot, 'scripts/assets/headshot.jpeg');
+const sourceImage = resolve(projectRoot, 'src/assets/headshot.jpeg');
 const outputImage = resolve(projectRoot, 'public/og.png');
 
 const WIDTH = 1200;
