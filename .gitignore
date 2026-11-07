@@ -15,3 +15,9 @@ dist/
 
 # macOS files
 .DS_Store
+
+# Local secrets
+.env
+
+# Private notes and plans
+notes/
