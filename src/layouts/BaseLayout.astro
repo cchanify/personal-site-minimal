@@ -7,7 +7,7 @@ interface Props {
   description: string;
   canonicalUrl?: string;
   ogUrl?: string;
-  activeNav: 'about' | 'ai' | 'links' | 'security' | 'blog';
+  activeNav?: 'about' | 'ai' | 'links' | 'security' | 'blog';
 }
 
 const { title, description, canonicalUrl, ogUrl, activeNav } = Astro.props;
@@ -57,11 +57,11 @@ const THEME_COLOR_DARK = '#121212';
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content={resolvedOgUrl}>
-    <meta property="twitter:title" content={title}>
-    <meta property="twitter:description" content={description}>
-    <meta property="twitter:image" content="https://connorhanify.com/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content={resolvedOgUrl}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content="https://connorhanify.com/og.png">
 
     <link rel="canonical" href={resolvedCanonical}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -77,11 +77,12 @@ const THEME_COLOR_DARK = '#121212';
     <div class="site-wrapper">
       <header>
         <div>
-          <h3 class="site-title">connor hanify</h3>
+          <a class="site-title" href="/">connor hanify</a>
           <p class="tagline">Security Engineer · Incident Response · Cloud Security</p>
         </div>
         <nav>
           <a class:list={['nav-link', { active: activeNav === 'about' }]} aria-current={activeNav === 'about' ? 'page' : undefined} href="/">about</a>
+          <a class:list={['nav-link', { active: activeNav === 'blog' }]} aria-current={activeNav === 'blog' ? 'page' : undefined} href="/blog/">blog</a>
           <a class:list={['nav-link', { active: activeNav === 'ai' }]} aria-current={activeNav === 'ai' ? 'page' : undefined} href="/ai/">ai</a>
           <a class:list={['nav-link', { active: activeNav === 'links' }]} aria-current={activeNav === 'links' ? 'page' : undefined} href="/links/">links</a>
           <a class:list={['nav-link', { active: activeNav === 'security' }]} aria-current={activeNav === 'security' ? 'page' : undefined} href="/security/">security</a>

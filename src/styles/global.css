@@ -48,6 +48,9 @@ header {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
+  display: block;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 .tagline {
@@ -97,9 +100,25 @@ footer a:not(:last-child)::after {
   color: var(--text-secondary) !important;
 }
 
-h4 {
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
+}
+
+h2 {
+  font-size: 1.1rem;
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 ul {

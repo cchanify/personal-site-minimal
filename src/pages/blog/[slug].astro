@@ -21,7 +21,7 @@ const { Content } = await render(post);
 >
   <article>
     <h1>{post.data.title}</h1>
-    <p class="text-muted"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long' })}</time></p>
+    <p class="text-muted"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time></p>
     <Content />
   </article>
 </BaseLayout>
