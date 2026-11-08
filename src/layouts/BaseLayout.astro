@@ -14,39 +14,20 @@ const { title, description, canonicalUrl, ogUrl, activeNav } = Astro.props;
 const resolvedCanonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedOgUrl = ogUrl ?? resolvedCanonical;
 
-const THEME_COLOR_LIGHT = '#ffffff';
-const THEME_COLOR_DARK = '#121212';
+const GOATCOUNTER_CODE = 'connorhanify';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <script is:inline define:vars={{ THEME_COLOR_LIGHT, THEME_COLOR_DARK }}>
-      (function () {
-        const stored = localStorage.getItem('theme-preference');
-        const preferred = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', preferred);
-        const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', preferred === 'dark' ? THEME_COLOR_DARK : THEME_COLOR_LIGHT);
-      })();
-    </script>
-
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3QKM22K088"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3QKM22K088');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <script is:inline src="/theme.js"></script>
+    <script is:inline data-goatcounter={`https://${GOATCOUNTER_CODE}.goatcounter.com/count`} async src="https://gc.zgo.at/count.js"></script>
+
     <meta name="description" content={description}>
     <meta name="author" content="Connor Hanify">
-    <meta name="theme-color" content={THEME_COLOR_LIGHT}>
     <title>{title}</title>
 
     <meta property="og:type" content="website">
@@ -86,6 +67,7 @@ const THEME_COLOR_DARK = '#121212';
           <a class:list={['nav-link', { active: activeNav === 'ai' }]} aria-current={activeNav === 'ai' ? 'page' : undefined} href="/ai/">ai</a>
           <a class:list={['nav-link', { active: activeNav === 'links' }]} aria-current={activeNav === 'links' ? 'page' : undefined} href="/links/">links</a>
           <a class:list={['nav-link', { active: activeNav === 'security' }]} aria-current={activeNav === 'security' ? 'page' : undefined} href="/security/">security</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
         </nav>
       </header>
 
@@ -99,40 +81,5 @@ const THEME_COLOR_DARK = '#121212';
         <a href="https://www.linkedin.com/in/connor-hanify-848063114/" target="_blank" rel="noopener">LinkedIn</a>
       </footer>
     </div>
-
-    <script is:inline define:vars={{ THEME_COLOR_LIGHT, THEME_COLOR_DARK }}>
-      (function () {
-        const STORAGE_KEY = 'theme-preference';
-        const themeMeta = document.querySelector('meta[name="theme-color"]');
-        const root = document.documentElement;
-
-        const getStored = () => localStorage.getItem(STORAGE_KEY);
-        const applyTheme = (theme) => {
-          root.setAttribute('data-theme', theme);
-          if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? THEME_COLOR_DARK : THEME_COLOR_LIGHT);
-          if (button) {
-            const isDark = theme === 'dark';
-            button.innerHTML = `<span class="toggle-icon">${isDark ? '☀️' : '🌙'}</span>${isDark ? 'Light' : 'Dark'}`;
-            button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
-          }
-        };
-
-        const button = document.createElement('button');
-        button.className = 'dark-mode-toggle';
-        button.type = 'button';
-        button.addEventListener('click', () => {
-          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          localStorage.setItem(STORAGE_KEY, next);
-          applyTheme(next);
-        });
-        document.body.appendChild(button);
-
-        applyTheme(root.getAttribute('data-theme') || 'light');
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!getStored()) applyTheme(e.matches ? 'dark' : 'light');
-        });
-      })();
-    </script>
   </body>
 </html>

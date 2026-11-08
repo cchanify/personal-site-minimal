@@ -11,32 +11,14 @@
   port = 8889
   functionsPort = 3999
 
-# Redirect www to non-www
-[[redirects]]
-  from = "https://www.connorhanify.com/*"
-  to = "https://connorhanify.com/:splat"
-  status = 301
-  force = true
-
-# Redirect HTTP to HTTPS (non-www)
-[[redirects]]
-  from = "http://connorhanify.com/*"
-  to = "https://connorhanify.com/:splat"
-  status = 301
-  force = true
-
-# Redirect HTTP www to HTTPS non-www
-[[redirects]]
-  from = "http://www.connorhanify.com/*"
-  to = "https://connorhanify.com/:splat"
-  status = 301
-  force = true
+# Redirects live in public/_redirects.
 
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://connorhanify.goatcounter.com; connect-src 'self' https://connorhanify.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: *.opensea.io *.openseauserdata.com; connect-src 'self' https: api.opensea.io https://www.google-analytics.com https://analytics.google.com; style-src-attr 'unsafe-inline';"

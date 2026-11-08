@@ -2,9 +2,6 @@
 https://www.connorhanify.com/* https://connorhanify.com/:splat 301!
 http://www.connorhanify.com/* https://connorhanify.com/:splat 301!
 
-# Redirect HTTP to HTTPS for non-www
-http://connorhanify.com/* https://connorhanify.com/:splat 301!
-
 # Legacy .html URLs → clean paths
 /ai.html /ai/ 301!
 /security.html /security/ 301!

@@ -36,59 +36,28 @@ a:hover {
   color: var(--text-primary);
 }
 
-[data-theme="dark"] nft-card {
-  filter: brightness(0.9);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.dark-mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  color: var(--text-primary);
-  padding: 8px 12px;
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.dark-mode-toggle:hover {
-  background: var(--border-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.theme-toggle:hover {
+  background: var(--bg-secondary);
 }
 
-.dark-mode-toggle:focus-visible {
+.theme-toggle:focus-visible {
   outline: 2px solid var(--text-link);
   outline-offset: 2px;
 }
 
-.toggle-icon {
-  margin-right: 6px;
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  .dark-mode-toggle {
-    top: 10px;
-    right: 10px;
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  body,
-  .dark-mode-toggle,
-  .dark-mode-toggle:hover {
+  body {
     transition: none;
-    transform: none;
   }
 }
