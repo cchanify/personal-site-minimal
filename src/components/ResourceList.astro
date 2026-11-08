@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  collection: 'security' | 'ai' | 'links';
+  headings?: boolean;
+}
+
+const { collection, headings = true } = Astro.props;
+const sections = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);
+---
+
+{sections.map(({ id, data }) => (
+  <>
+    {headings && <h2 id={id}>{data.title}</h2>}
+    <ul>
+      {data.items.map((item) => (
+        <li>{item.before}{item.url ? <a href={item.url}>{item.title}</a> : <strong>{item.title}</strong>}{item.after}</li>
+      ))}
+    </ul>
+  </>
+))}

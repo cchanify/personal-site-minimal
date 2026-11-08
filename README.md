@@ -22,6 +22,7 @@ npx netlify-cli@latest dev   # http://localhost:8889/.netlify/functions/strava-s
 
 - `src/pages/`: pages (`about`, `ai`, `links`, `security`, `blog`)
 - `posts/`: blog posts (Markdown)
+- `src/data/*.yaml`: the link lists on the security, ai and links pages. Add a link by adding an item: `title`, `url`, and optional `before` / `after` text
 - `netlify/functions/`: serverless functions
 - `public/`: static files served as-is
 
