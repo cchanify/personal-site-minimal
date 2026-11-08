@@ -30,4 +30,5 @@ jobs:
             --max-retries 2
             --timeout 20
             --exclude linkedin.com
+            --exclude sophos.com
             'dist/**/*.html'
