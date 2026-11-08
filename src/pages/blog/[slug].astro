@@ -18,10 +18,17 @@ const { Content } = await render(post);
   title={`${post.data.title} - Connor Hanify`}
   description={post.data.description}
   activeNav="blog"
+  ogType="article"
 >
+  <Fragment slot="head">
+    <meta property="article:published_time" content={post.data.pubDate.toISOString()}>
+  </Fragment>
   <article>
     <h1>{post.data.title}</h1>
-    <p class="text-muted"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time></p>
+    <p class="text-muted">
+      <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long', timeZone: 'UTC' })}</time>
+      {post.data.tags.length > 0 && <> · {post.data.tags.join(' · ')}</>}
+    </p>
     <Content />
   </article>
 </BaseLayout>

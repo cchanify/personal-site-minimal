@@ -8,9 +8,10 @@ interface Props {
   canonicalUrl?: string;
   ogUrl?: string;
   activeNav?: 'about' | 'ai' | 'links' | 'security' | 'blog';
+  ogType?: 'website' | 'article';
 }
 
-const { title, description, canonicalUrl, ogUrl, activeNav } = Astro.props;
+const { title, description, canonicalUrl, ogUrl, activeNav, ogType = 'website' } = Astro.props;
 const resolvedCanonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedOgUrl = ogUrl ?? resolvedCanonical;
 
@@ -30,7 +31,7 @@ const GOATCOUNTER_CODE = 'connorhanify';
     <meta name="author" content="Connor Hanify">
     <title>{title}</title>
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content={ogType}>
     <meta property="og:url" content={resolvedOgUrl}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
@@ -48,6 +49,7 @@ const GOATCOUNTER_CODE = 'connorhanify';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/rss+xml" title="Connor Hanify" href="/rss.xml">
 
     <slot name="head" />
   </head>
@@ -79,6 +81,7 @@ const GOATCOUNTER_CODE = 'connorhanify';
         <a href="mailto:connorchanify@gmail.com">Email</a>
         <a href="https://github.com/cchanify" target="_blank" rel="noopener">Github</a>
         <a href="https://www.linkedin.com/in/connor-hanify-848063114/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/rss.xml">RSS</a>
       </footer>
     </div>
   </body>
